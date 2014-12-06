@@ -1,0 +1,94 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+*/
+$header-1_x = 0px;
+$header-1_y = 0px;
+$header-1_offset_x = 0px;
+$header-1_offset_y = 0px;
+$header-1_width = 226px;
+$header-1_height = 359px;
+$header-1_total_width = 904px;
+$header-1_total_height = 433px;
+$header-1_image = 'sprite.png';
+$header-1 = 0px 0px 0px 0px 226px 359px 904px 433px 'sprite.png';
+$header-2_x = 226px;
+$header-2_y = 0px;
+$header-2_offset_x = -226px;
+$header-2_offset_y = 0px;
+$header-2_width = 226px;
+$header-2_height = 359px;
+$header-2_total_width = 904px;
+$header-2_total_height = 433px;
+$header-2_image = 'sprite.png';
+$header-2 = 226px 0px -226px 0px 226px 359px 904px 433px 'sprite.png';
+$header-3_x = 452px;
+$header-3_y = 0px;
+$header-3_offset_x = -452px;
+$header-3_offset_y = 0px;
+$header-3_width = 226px;
+$header-3_height = 359px;
+$header-3_total_width = 904px;
+$header-3_total_height = 433px;
+$header-3_image = 'sprite.png';
+$header-3 = 452px 0px -452px 0px 226px 359px 904px 433px 'sprite.png';
+$header-4_x = 678px;
+$header-4_y = 0px;
+$header-4_offset_x = -678px;
+$header-4_offset_y = 0px;
+$header-4_width = 226px;
+$header-4_height = 359px;
+$header-4_total_width = 904px;
+$header-4_total_height = 433px;
+$header-4_image = 'sprite.png';
+$header-4 = 678px 0px -678px 0px 226px 359px 904px 433px 'sprite.png';
+$plane_x = 0px;
+$plane_y = 359px;
+$plane_offset_x = 0px;
+$plane_offset_y = -359px;
+$plane_width = 83px;
+$plane_height = 74px;
+$plane_total_width = 904px;
+$plane_total_height = 433px;
+$plane_image = 'sprite.png';
+$plane = 0px 359px 0px -359px 83px 74px 904px 433px 'sprite.png';
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
