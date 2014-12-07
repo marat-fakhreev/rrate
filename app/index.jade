@@ -9,24 +9,138 @@ html
     link(rel="stylesheet" href="/application.css")
     script(type="text/javascript" src="/application.js")
   body
-    section.head
+    section.screen-1.head
       .head-picture
         .picture
           .layer.layer--foreground-layer
           .layer.layer--background-layer
+        .red-label
+          .icon-logo
+          span.text--center
+            | Узнай и оцени, что есть рядом.
+          form
+            .fa.fa-search
+            input(type="text" placeholder="Введите адрес")
+            input(type="submit" class="button" value="Оценить")
+          p.text--center
+            |Он-лайн сервис созданный <br> людьми и для людей
+
       ul.head-list
         li
           .count 150
-          p Типов объектов для аналитики
+          p
+            | Типов объектов <br> для аналитики
         li
           .count 8
-          p Жизенно важных категорий
+          p
+            | Жизенно важных <br> категорий
         li
           .count 32
-          p Среднее кол-во зубов на сотрудника
+          p
+            | Среднее кол-во <br> зубов на сотрудника
         li
           .count 240
-          p Вариантов преднастройки
+          p
+            | Вариантов <br> преднастройки
 
-    section.page
-      | sdfsf
+
+    header
+      .header-inner
+        .logo
+          .icon-logo
+          .logo-text
+            span Рядом
+            i Alpha версия
+        nav
+          ul
+            li.active
+              span Оценить
+            li
+              span Как это работает
+            li
+              span Бизнесу
+            li
+              span Партнерам
+            li
+              span Доска почета
+            li
+              span Контакты
+
+
+    section.screen.screen-2
+      .screen-inner
+        h1 Как это работает
+
+        .map-slider
+          .icon-logo-cut
+          p.text--center
+            | Алгоритм оценки построен на потребностях миллионов пользователей. <br> При расчете учитываются не только расстояние и кол-во объектов в шаговой <br> доступности, но и отзывы о них.
+          ul.schemes
+
+        .map-buttons-block
+          ul
+            li.active Для студента
+            li Для семьи
+            li Для туриста
+
+
+    section.screen.screen-3.screen--dark
+      .screen-inner
+        h2.text--center.text--with-shift
+          | Интересно попробовать? Оцени свой дом сейчас!
+        a(href='#' class='button button--red') Перейти к поиску
+
+
+    section.screen.screen-4.map-slider-screen
+      .screen-inner
+        h1 Как это работает
+
+        .map-slider
+          .icon-logo-cut
+          p.text--center
+            | Алгоритм оценки построен на потребностях миллионов пользователей. <br> При расчете учитываются не только расстояние и кол-во объектов в шаговой <br> доступности, но и отзывы о них.
+          ul.schemes
+
+        .map-buttons-block
+          ul
+            li.active Для студента
+            li Для семьи
+            li Для туриста
+
+
+    section.screen.screen-5.screen--dark
+      .screen-inner
+        h1 Партнерская программа
+        p.text--center.text--with-shift
+          | У нас есть несколько интересных инструментов для Вас, которые помогут вам продать <br> объявление быстрее.
+        article.text-block.text-block-api
+          .circle-api
+          .text
+            h2 Наше API для оценки
+            p
+              | Встраивая наше API, вы увеличиваете возможности вашего сайта. Наш код уже используют несколько тестовых серверов. Будьте первыми, кто
+        article.text-block.text-block-document
+          .text
+            h2 Площадка для вас
+            p
+              | Площадка для ваших объявлений на нашем сайте! <br> У нас есть умный алгоритм выдачи результатов <br> только тем людям, которые ими интересуются
+          .circle-document
+
+
+    section.screen.screen-6
+      .screen-inner
+        h1 Доска почета
+        p.text--center.text--with-shift
+          | Совсем скоро у нас появится отдельная страница для тех, кто помог нам и внес свой <br> вклад в проект! А пока, Вы можете заполнить анкету и в ответ <br> вы попадете на нашу доску!
+        p.text--center.text--with-shift
+          | Ведь именно по Вашим ответам, мы и строим рейтинг недвижимости!
+
+
+    footer
+      .footer-inner
+        p
+          | Наш сервис работает в тестовом режиме, помогите нам сделать его лучше <br> и получите настоящую медаль создателя он-лайн сервиса!
+        a(href='#' class='button')
+          span
+            .icon-pen
+            Заполнить анкету

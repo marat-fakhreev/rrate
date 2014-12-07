@@ -4,7 +4,6 @@ $skyColor = #b7e7e7
   margin: 0 auto
   height: 780px
   width: 100%
-  border-bottom: 2px solid $mainRedColor
 
 .head-picture
   margin: 0 auto
@@ -37,9 +36,90 @@ $skyColor = #b7e7e7
       z-index: 10
       background-image: url('../images/city-back.png')
 
-    ul.head-list
-      center($wrapperWith)
+  .red-label
+    sprite($red-label)
+    position: absolute
+    top: 2px
+    left: 50%
+    margin-left: -238px
+    z-index: 100
 
-      li
-        col(1/4)
-        list-style-type: none
+    .icon-logo
+      font-size: 194px
+      color: #fff
+      margin: 85px auto 15px
+      text-align: center
+
+    span
+    p
+      display: block
+      color: #fff
+
+    span
+      font-size: 18px
+
+    p
+      font-size: 14px
+
+    form
+      margin: 15px auto
+      width: 384px
+      position: relative
+
+      .fa-search
+        position: absolute
+        color: #fff
+        top: 15px
+        left: 15px
+
+    .button
+      padding: 0
+
+    input
+      &[type="text"]
+        display: block
+        width: 100%
+        height: 44px
+        background-color: $mainGreyColor
+        border: none
+        border-radius: 4px
+        box-sizing: border-box
+        padding: 5px 100px 5px 37px
+        outline: none
+        color: #fff
+        font-size: 14px
+        font-family: $dinMedium
+
+      &[type="submit"]
+        width: 90px
+        position: absolute
+        top: 5px
+        right: 5px
+        bottom: 5px
+        font-size: 14px
+        font-family: $dinMedium
+        color: $mainGreyColor
+        cursor: pointer
+        height: auto
+        line-height: 17px
+
+ul.head-list
+  display: block
+  center($wrapperWidth)
+
+  li
+    col(1/4)
+    list-style-type: none
+    height: 25px
+    padding: 10px 0
+
+  .count
+    font-size: 36px
+    color: $mainRedColor
+    float: left
+    margin: 0 5px 0 0
+
+  p
+    display: block
+    font-size: 13px
+    margin: 3px 0 0 0

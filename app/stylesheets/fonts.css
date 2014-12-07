@@ -1,15 +1,21 @@
 @font-face {
   font-family: 'DINRoundPro-Medi';
-  src: url('DINRoundPro-Medi.eot?#iefix') format('embedded-opentype'),  url('DINRoundPro-Medi.otf')  format('opentype'),
-       url('DINRoundPro-Medi.woff') format('woff'), url('DINRoundPro-Medi.ttf')  format('truetype'), url('DINRoundPro-Medi.svg#DINRoundPro-Medi') format('svg');
+  src: url('fonts/DINRoundPro-Medi.eot?#iefix') format('embedded-opentype'),
+       url('fonts/DINRoundPro-Medi.otf')  format('opentype'),
+       url('fonts/DINRoundPro-Medi.woff') format('woff'),
+       url('fonts/DINRoundPro-Medi.ttf')  format('truetype'),
+       url('fonts/DINRoundPro-Medi.svg#DINRoundPro-Medi') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DINRoundPro';
-  src: url('DINRoundPro.eot?#iefix') format('embedded-opentype'),  url('DINRoundPro.otf')  format('opentype'),
-       url('DINRoundPro.woff') format('woff'), url('DINRoundPro.ttf')  format('truetype'), url('DINRoundPro.svg#DINRoundPro') format('svg');
+  src: url('fonts/DINRoundPro.eot?#iefix') format('embedded-opentype'),
+       url('fonts/DINRoundPro.otf')  format('opentype'),
+       url('fonts/DINRoundPro.woff') format('woff'),
+       url('fonts/DINRoundPro.ttf')  format('truetype'),
+       url('fonts/DINRoundPro.svg#DINRoundPro') format('svg');
   font-weight: normal;
   font-style: normal;
 }

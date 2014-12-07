@@ -1,0 +1,62 @@
+header
+  background-color: #fff
+  border-top: 2px solid $mainRedColor
+  height: 66px
+
+  &.fixed
+    z-index: 100
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+
+  .header-inner
+    center($wrapperWidth)
+
+  .logo
+    float: left
+    padding: 10px 0
+    margin: 0 35px 0 0
+
+    .icon-logo
+      font-size: 46px
+      margin: 0 8px 0 0
+      float: left
+      color: $mainRedColor
+
+    .logo-text
+      float: left
+      margin: 5px 0
+
+    span
+    i
+      display: block
+
+    span
+      font-size: 26px
+      font-weight: bold
+
+    i
+      font-size: 9px
+      font-style: normal
+      margin: 0 3px
+
+  nav
+    float: left
+
+    li
+      float: left
+      font-size: 18px
+      margin: 0 35px 0 0
+      line-height: 66px
+      cursor: pointer
+      display: block
+
+      &:hover
+        color: $mainRedColor
+
+      &.active
+        color: $mainRedColor
+
+        span
+          box-shadow: 0 2px 0 0 $mainRedColor

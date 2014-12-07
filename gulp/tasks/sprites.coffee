@@ -7,6 +7,7 @@ gulp.task 'sprites', ->
   gulp.src("#{config.appDir}/images/sprites/**/*.png")
     .pipe(spritesmith(
       imgName: 'sprite.png'
+      imgPath: 'images/sprite.png'
       cssName: 'sprite.styl'
       cssFormat: 'stylus'
       algorithm: 'binary-tree'

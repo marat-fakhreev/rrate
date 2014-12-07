@@ -1,0 +1,51 @@
+.screen-2
+  .map-slider
+    sprite($map-1-1)
+    width: 1024px
+    height: 498px
+    background-repeat: no-repeat
+    position: relative
+
+    .icon-logo-cut
+      font-size: 56px
+      color: $mainRedColor
+      position: absolute
+      top: 217px
+      left: 493px
+
+    p
+      text-align: center
+
+  .map-buttons-block
+    center(660px)
+
+    li
+      col(1/3)
+      width: 200px
+      height: 50px
+      border-radius: 5px
+      background-color: $mainRedColor
+      line-height: 50px
+      text-align: center
+      font-size: 18px
+      color: #fff
+      cursor: pointer
+      display: block
+      position: relative
+
+      &.active
+        background-color: $mainGreyColor
+
+        &::before
+          content: ''
+          top: -17px
+          left: 50%
+          border: solid transparent
+          height: 0
+          width: 0
+          position: absolute
+          pointer-events: none
+          border-color: transparent
+          border-bottom-color: $mainGreyColor
+          border-width: 10px
+          margin-left: -10px
