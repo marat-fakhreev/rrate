@@ -10,7 +10,31 @@
   box-sizing: border-box
   height: 50px
   line-height: 50px
+  display: inline-block
+  cursor: pointer
 
 .button--red
   background-color: $mainRedColor
   color: #fff
+
+.button--dark
+  background-color: $mainGreyColor
+  color: #fff
+
+.button--center
+  width: 250px
+  margin: 0 auto
+  display: block
+
+.button--with-arrow
+  span
+    float: left
+    display: block
+    padding: 0 22px 0 0
+    position: relative
+
+    .icon-arrow
+      font-size: 15px
+      position: absolute
+      top: 19px
+      right: 0

@@ -3,9 +3,17 @@ footer
   bottom: 0
   left: 0
   right: 0
-  height: 65px
+  height: 0
   background-color: $mainGreyColor
   z-index: 100
+  overflow: hidden
+  opacity: 0
+  transition: all 0.5s ease
+
+  &.displayed
+    height: 65px
+    opacity: 1
+    transition: all 0.5s ease
 
   .footer-inner
     center($wrapperWidth)

@@ -9,10 +9,14 @@ html
     link(rel="stylesheet" href="/application.css")
     script(type="text/javascript" src="/application.js")
   body
-    section.screen-1.head
+    section.js-page.head
       .head-picture
         .picture
           .layer.layer--foreground-layer
+            .header-img.header-1
+            .header-img.header-2
+            .header-img.header-3
+            .header-img.header-4
           .layer.layer--background-layer
         .red-label
           .icon-logo
@@ -67,48 +71,63 @@ html
               span Контакты
 
 
-    section.screen.screen-2
+    section.js-page.screen.screen-2
       .screen-inner
         h1 Как это работает
 
-        .map-slider
-          .icon-logo-cut
-          p.text--center
-            | Алгоритм оценки построен на потребностях миллионов пользователей. <br> При расчете учитываются не только расстояние и кол-во объектов в шаговой <br> доступности, но и отзывы о них.
-          ul.schemes
+        .map
+          .map-slider
+            .icon-logo-cut
+            p.text--center
+              | Алгоритм оценки построен на потребностях миллионов пользователей. <br> При расчете учитываются не только расстояние и кол-во объектов в шаговой <br> доступности, но и отзывы о них.
+            ul.schemes
+              li.active 1
+              li 2
+              li 3
 
-        .map-buttons-block
-          ul
-            li.active Для студента
-            li Для семьи
-            li Для туриста
+          .map-buttons-block
+            ul.map-buttons
+              li.active Для студента
+              li Для семьи
+              li Для туриста
 
 
     section.screen.screen-3.screen--dark
       .screen-inner
         h2.text--center.text--with-shift
           | Интересно попробовать? Оцени свой дом сейчас!
-        a(href='#' class='button button--red') Перейти к поиску
+        a(href='#' class='button button--red button--center') Перейти к поиску
 
 
-    section.screen.screen-4.map-slider-screen
+    section.js-page.screen.screen-4.map-slider-screen
       .screen-inner
-        h1 Как это работает
+        h1 Решение для бизнеса
 
-        .map-slider
-          .icon-logo-cut
-          p.text--center
-            | Алгоритм оценки построен на потребностях миллионов пользователей. <br> При расчете учитываются не только расстояние и кол-во объектов в шаговой <br> доступности, но и отзывы о них.
-          ul.schemes
+        .map
+          .map-slider
+            .icon-logo-cut
+            p.text--center
+              | Место - одно из ключевых «координат» маркетингового планирования. Вы узнаете, на <br> сколько месторасположение объекта коммерческой недвижимости подходит <br> Вашему Бизнесу.
+            ul.schemes
+              li.active 1
+              li 2
+              li 3
 
-        .map-buttons-block
-          ul
-            li.active Для студента
-            li Для семьи
-            li Для туриста
+          .map-buttons-block
+            ul.map-buttons
+              li.active Кафе
+              li Офис
+              li Склад
 
+        .additional-block
+          p
+            | Попробуйте оценить свой бизнес <br> на основе многочисленых экспертиз
+          .button.button--with-arrow
+            span
+              | Сделать экспертизу
+              .icon-arrow
 
-    section.screen.screen-5.screen--dark
+    section.js-page.screen.screen-5.screen--dark
       .screen-inner
         h1 Партнерская программа
         p.text--center.text--with-shift
@@ -119,21 +138,33 @@ html
             h2 Наше API для оценки
             p
               | Встраивая наше API, вы увеличиваете возможности вашего сайта. Наш код уже используют несколько тестовых серверов. Будьте первыми, кто
+            .button.button--dark.button--with-arrow
+              span
+                | Подробнее
+                .icon-arrow
         article.text-block.text-block-document
           .text
             h2 Площадка для вас
             p
               | Площадка для ваших объявлений на нашем сайте! <br> У нас есть умный алгоритм выдачи результатов <br> только тем людям, которые ими интересуются
+            .button.button--dark.button--with-arrow
+              span
+                | Подробнее
+                .icon-arrow
           .circle-document
 
 
-    section.screen.screen-6
+    section.js-page.screen.screen-6
       .screen-inner
         h1 Доска почета
         p.text--center.text--with-shift
           | Совсем скоро у нас появится отдельная страница для тех, кто помог нам и внес свой <br> вклад в проект! А пока, Вы можете заполнить анкету и в ответ <br> вы попадете на нашу доску!
         p.text--center.text--with-shift
           | Ведь именно по Вашим ответам, мы и строим рейтинг недвижимости!
+        .button.button--dark.button--with-arrow.button--center
+          span
+            | Помочь сервису
+            .icon-arrow
 
 
     footer

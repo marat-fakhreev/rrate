@@ -10,7 +10,6 @@ gulp.task 'build', ->
       'copy'
       'templates'
       'stylesheets'
-      'jsonlint'
       'coffeelint'
     ]
     'browserify'

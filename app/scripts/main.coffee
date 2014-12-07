@@ -3,4 +3,4 @@ require('underscore')
 
 App = require('scripts/application')
 
-$ -> App.start()
+$ -> new App
