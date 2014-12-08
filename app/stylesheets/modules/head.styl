@@ -2,12 +2,12 @@ $skyColor = #b7e7e7
 
 .head
   margin: 0 auto
-  height: 780px
+  height: 820px
   width: 100%
 
 .head-picture
   margin: 0 auto
-  height: 715px
+  height: 755px
   width: 100%
   background-color: $skyColor
   border-top: 10px solid $mainGreyColor
@@ -19,7 +19,7 @@ $skyColor = #b7e7e7
     height: 100%
 
   .layer
-    height: 715px
+    height: 755px
     width: 100%
     background-size: 50% auto
     position: absolute
@@ -52,13 +52,25 @@ $skyColor = #b7e7e7
       bottom: 400px
       right: 230px
 
-    &.layer--foreground-layer
-      z-index: 20
-      background-image: url('../images/city-front.png')
+    &.layer-one
+      z-index: 50
+      background-image: url('../images/header-1.png')
 
-    &.layer--background-layer
+    &.layer-two
+      z-index: 40
+      background-image: url('../images/header-2.png')
+
+    &.layer-three
+      z-index: 30
+      background-image: url('../images/header-3.png')
+
+    &.layer-four
+      z-index: 20
+      background-image: url('../images/header-4.png')
+
+    &.layer-five
       z-index: 10
-      background-image: url('../images/city-back.png')
+      background-image: url('../images/header-5.png')
 
   .red-label
     sprite($red-label)

@@ -18,12 +18,18 @@ class Application
       page: $('.js-page')
       menuButton: $('nav li')
       mapButton: $('.map-buttons li')
+      layerOne: $('.layer-one')
+      layerTwo: $('.layer-two')
+      layerThree: $('.layer-three')
+      layerFour: $('.layer-four')
+      layerFive: $('.layer-five')
 
   events: ->
     @ui.wind.on 'scroll', @onScrollHeader
     @ui.wind.on 'scroll', @onScrollPages
     @ui.menuButton.on 'click', @onMoveToScreen
     @ui.mapButton.on 'click', @onClickMapButton
+    @ui.body.on 'mousemove', @onMoveHeadBackground
 
   onScrollHeader: =>
     if @ui.wind.scrollTop() < @fromTop
@@ -60,6 +66,15 @@ class Application
     @ui.mapButton.removeClass('active')
     self.addClass('active')
     $map.find('.schemes li').removeClass('active').eq(index).addClass('active')
+
+  onMoveHeadBackground: (event) =>
+    @_setShift(event, @ui.layerTwo, 0.05, 0.002)
+    @_setShift(event, @ui.layerThree, 0.01, 0)
+    @_setShift(event, @ui.layerFour, -0.015, 0.015)
+    @_setShift(event, @ui.layerFive, -0.015, -0.015)
+
+  _setShift: (event, $selector, xCoef, yCoef) ->
+    $selector.css('background-position', "#{xCoef * event.pageX}px #{yCoef * event.pageY}px")
 
   _fromTop: ->
     @ui.head.height()
