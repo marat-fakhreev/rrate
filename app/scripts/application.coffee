@@ -5,6 +5,7 @@ class Application
     @initUi()
     @events()
 
+    @_setHead()
     @fromTop = @_fromTop()
     @offsetArray = @_calcOffsetArray()
 
@@ -15,6 +16,7 @@ class Application
       header: $('header')
       footer: $('footer')
       head: $('.head')
+      headPicture: $('.head-picture')
       page: $('.js-page')
       menuButton: $('nav li')
       mapButton: $('.map-buttons li')
@@ -33,10 +35,10 @@ class Application
 
   onScrollHeader: =>
     if @ui.wind.scrollTop() < @fromTop
-      @ui.header.removeClass('fixed')
+      @ui.header.removeClass('displayed')
       @ui.footer.removeClass('displayed')
     else
-      @ui.header.addClass('fixed')
+      @ui.header.addClass('displayed')
       @ui.footer.addClass('displayed')
 
   onScrollPages: =>
@@ -68,7 +70,7 @@ class Application
     $map.find('.schemes li').removeClass('active').eq(index).addClass('active')
 
   onMoveHeadBackground: (event) =>
-    @_setShift(event, @ui.layerTwo, 0.05, 0.002)
+    @_setShift(event, @ui.layerTwo, 0.003, 0)
     @_setShift(event, @ui.layerThree, 0.01, 0)
     @_setShift(event, @ui.layerFour, -0.015, 0.015)
     @_setShift(event, @ui.layerFive, -0.015, -0.015)
@@ -87,5 +89,11 @@ class Application
 
     array.push(Number.MAX_SAFE_INTEGER)
     array
+
+  _setHead: ->
+    windowHeight = @ui.wind.height()
+    @ui.head.css('height': windowHeight)
+    @ui.headPicture.css('height': windowHeight - 60)
+    windowHeight
 
 module.exports = Application

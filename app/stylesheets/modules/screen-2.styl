@@ -41,8 +41,15 @@
       display: block
       position: relative
 
+      &:hover
+        background-color: $mainRedColorHover
+
       &.active
         background-color: $mainGreyColor
+        cursor: default
+
+        &:hover
+          background-color: $mainGreyColor
 
         &::before
           content: ''

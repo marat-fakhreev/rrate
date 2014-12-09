@@ -7,6 +7,7 @@ gulp.task 'copy', ->
     "#{config.appDir}/images/**/*"
     "!#{config.appDir}/images/sprites"
     "#{config.appDir}/fonts/**/*"
+    "#{config.appDir}/favicon/**/*"
   ], base: 'app/')
   .pipe(plumber())
   .pipe(gulp.dest("#{config.publicDir}"))

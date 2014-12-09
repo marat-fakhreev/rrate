@@ -2,30 +2,27 @@ $skyColor = #b7e7e7
 
 .head
   margin: 0 auto
-  height: 820px
   width: 100%
+  border-bottom: 2px solid $mainRedColor
+  box-sizing: border-box
 
 .head-picture
   margin: 0 auto
-  height: 755px
+  height: 100%
   width: 100%
   background-color: $skyColor
   border-top: 10px solid $mainGreyColor
   border-bottom: 1px solid #fff
   box-shadow: 0 2px 1px 0 $mainRedColor
-
-  .picture
-    width: 100%
-    height: 100%
+  box-sizing: border-box
+  position: relative
 
   .layer
     height: 755px
     width: 100%
     background-size: 50% auto
     position: absolute
-    top: 10px
     left: 0
-    right: 0
     bottom: 0
 
     .header-img
@@ -75,7 +72,7 @@ $skyColor = #b7e7e7
   .red-label
     sprite($red-label)
     position: absolute
-    top: 2px
+    top: -8px
     left: 50%
     margin-left: -238px
     z-index: 100
@@ -83,7 +80,7 @@ $skyColor = #b7e7e7
     .icon-logo
       font-size: 194px
       color: #fff
-      margin: 85px auto 15px
+      margin: 55px auto 15px
       text-align: center
 
     span
@@ -93,12 +90,13 @@ $skyColor = #b7e7e7
 
     span
       font-size: 18px
+      margin-bottom: 25px
 
     p
       font-size: 14px
 
     form
-      margin: 15px auto
+      margin: 15px auto 5px
       width: 384px
       position: relative
 
@@ -126,6 +124,11 @@ $skyColor = #b7e7e7
         font-size: 14px
         font-family: $dinMedium
 
+        &:hover
+        &:focus
+          background-color: $mainGreyColorHover
+          cursor: pointer
+
       &[type="submit"]
         width: 90px
         position: absolute
@@ -139,8 +142,13 @@ $skyColor = #b7e7e7
         height: auto
         line-height: 17px
 
+        &:hover
+          color: $mainRedColor
+
 ul.head-list
   display: block
+  height: 60px
+  box-sizing: border-box
   center($wrapperWidth)
 
   li

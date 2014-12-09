@@ -1,14 +1,22 @@
 header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  height: 0
+  opacity: 0
   background-color: #fff
+  z-index: 100
   border-top: 2px solid $mainRedColor
-  height: 66px
+  height: 0
+  overflow: hidden
+  box-sizing: border-box
+  transition: all 0.5s ease
 
-  &.fixed
-    z-index: 100
-    position: fixed
-    left: 0
-    top: 0
-    right: 0
+  &.displayed
+    height: 70px
+    opacity: 1
+    transition: all 0.5s ease
 
   .header-inner
     center($wrapperWidth)
@@ -26,7 +34,6 @@ header
 
     .logo-text
       float: left
-      margin: 5px 0
 
     span
     i
