@@ -5,8 +5,9 @@ class Application
     @initUi()
     @events()
 
-    @_setHead()
-    @fromTop = @_fromTop()
+    winHeight = @_windowHeight()
+    @_setHead(winHeight)
+    @fromTop = winHeight
     @offsetArray = @_calcOffsetArray()
 
   initUi: ->
@@ -20,6 +21,7 @@ class Application
       page: $('.js-page')
       menuButton: $('nav li')
       mapButton: $('.map-buttons li')
+      plane: $('.plane')
       layerOne: $('.layer-one')
       layerTwo: $('.layer-two')
       layerThree: $('.layer-three')
@@ -74,12 +76,19 @@ class Application
     @_setShift(event, @ui.layerThree, 0.01, 0)
     @_setShift(event, @ui.layerFour, -0.015, 0.015)
     @_setShift(event, @ui.layerFive, -0.015, -0.015)
+    @_setLinearShift(event, @ui.plane, 0.1)
 
   _setShift: (event, $selector, xCoef, yCoef) ->
     $selector.css('background-position', "#{xCoef * event.pageX}px #{yCoef * event.pageY}px")
 
-  _fromTop: ->
-    @ui.head.height()
+  _setLinearShift: (event, $selector, xCoef) ->
+    $selector.css({
+      bottom: "#{500 + xCoef / 5 * event.pageX}px",
+      left: "#{200 + xCoef * event.pageX}px"
+    })
+
+  _windowHeight: ->
+    @ui.wind.height()
 
   _calcOffsetArray: ->
     array = []
@@ -90,10 +99,8 @@ class Application
     array.push(Number.MAX_SAFE_INTEGER)
     array
 
-  _setHead: ->
-    windowHeight = @ui.wind.height()
-    @ui.head.css('height': windowHeight)
-    @ui.headPicture.css('height': windowHeight - 60)
-    windowHeight
+  _setHead: (height) ->
+    @ui.head.css('height': height)
+    @ui.headPicture.css('height': height - 60)
 
 module.exports = Application

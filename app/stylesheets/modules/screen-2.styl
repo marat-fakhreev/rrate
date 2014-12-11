@@ -1,4 +1,15 @@
 .screen-2
+  svg
+    path
+      stroke: black
+      stroke-dasharray: 5
+
+      &.left
+        animation: dleft 3000s linear
+
+      &.right
+        animation: dright 3000s linear
+
   .map-slider
     sprite($map-1-1)
     width: 1024px
@@ -64,3 +75,11 @@
           border-bottom-color: $mainGreyColor
           border-width: 10px
           margin-left: -10px
+
+@keyframes dleft
+  to
+    stroke-dashoffset: -100000
+
+@keyframes dright
+  to
+    stroke-dashoffset: -100000

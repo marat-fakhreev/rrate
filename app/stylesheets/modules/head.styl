@@ -6,6 +6,16 @@ $skyColor = #b7e7e7
   border-bottom: 2px solid $mainRedColor
   box-sizing: border-box
 
+.car
+  position: absolute
+  bottom: 0
+  sprite($car)
+
+.truck
+  position: absolute
+  bottom: 0
+  sprite($truck)
+
 .head-picture
   margin: 0 auto
   height: 100%
@@ -27,27 +37,101 @@ $skyColor = #b7e7e7
 
     .header-img
       position: absolute
-      zoom: 0.5
+
+    .plane
+      sprite($plane)
+      bottom: 500px
+      left: 200px
 
     .header-1
       sprite($header-1)
-      bottom: 400px
-      left: 230px
+      bottom: 230px
+      left: 120px
 
     .header-2
       sprite($header-2)
-      bottom: 300px
-      left: 600px
+      bottom: 190px
+      left: 300px
 
     .header-3
       sprite($header-3)
-      bottom: 300px
-      right: 600px
+      bottom: 190px
+      right: 300px
 
     .header-4
       sprite($header-4)
-      bottom: 400px
-      right: 230px
+      bottom: 230px
+      right: 120px
+
+    .car-left
+      @extend .car
+      left: -100px
+
+      &.car-1
+        bottom: 30px
+        animation: movementLeft 40s 0s 1000 linear
+
+      &.car-2
+        bottom: 40px
+        animation: movementLeft 40s 12s 1000 linear
+
+      &.car-3
+        bottom: 30px
+        animation: movementLeft 40s 24s 1000 linear
+
+      &.car-4
+        bottom: 40px
+        animation: movementLeft 40s 35s 1000 linear
+
+    .truck-left
+      @extend .truck
+      left: -100px
+
+      &.truck-1
+        bottom: 35px
+        animation: movementLeft 40s 6s 1000 linear
+
+      &.truck-2
+        bottom: 28px
+        animation: movementLeft 40s 16s 1000 linear
+
+      &.truck-3
+        bottom: 35px
+        animation: movementLeft 40s 28s 1000 linear
+
+    .car-right
+      @extend .car
+      right: -100px
+      transform: scaleX(-1)
+
+      &.car-1
+        bottom: 5px
+        animation: movementRight 40s 0s 1000 linear
+
+      &.car-2
+        bottom: 15px
+        animation: movementRight 40s 12s 1000 linear
+
+      &.car-3
+        bottom: 5px
+        animation: movementRight 40s 24s 1000 linear
+
+      &.car-4
+        bottom: 15px
+        animation: movementRight 40s 35s 1000 linear
+
+    .truck-right
+      @extend .truck
+      right: -100px
+      transform: scaleX(-1)
+
+      &.truck-1
+        bottom: 7px
+        animation: movementRight 40s 6s 1000 linear
+
+      &.truck-2
+        bottom: 14px
+        animation: movementRight 40s 26s 1000 linear
 
     &.layer-one
       z-index: 50
@@ -141,6 +225,7 @@ $skyColor = #b7e7e7
         cursor: pointer
         height: auto
         line-height: 17px
+        outline: 0 none
 
         &:hover
           color: $mainRedColor
@@ -167,3 +252,15 @@ ul.head-list
     display: block
     font-size: 13px
     margin: 3px 0 0 0
+
+@keyframes movementLeft
+  from
+    left: 0
+  to
+    left: 105%
+
+@keyframes movementRight
+  from
+    right: 0
+  to
+    right 105%
