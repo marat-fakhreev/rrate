@@ -3,6 +3,6 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "underscore": "~1.7.0",
-    "font-awesome": "~4.2.0"
+    "font-awesome": "4.0.0"
   }
 }

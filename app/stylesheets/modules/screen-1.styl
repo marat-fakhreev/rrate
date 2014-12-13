@@ -165,15 +165,16 @@ $skyColor = #b7e7e7
     .icon-logo
       font-size: 194px
       color: #fff
-      margin: 55px auto 15px
+      margin: 30px auto 15px
       text-align: center
+      display: block
 
-    span
+    .label-text
     p
       display: block
       color: #fff
 
-    span
+    .label-text
       font-size: 18px
       margin-bottom: 25px
 
@@ -233,35 +234,32 @@ $skyColor = #b7e7e7
 
 ul.head-list
   display: block
-  height: 60px
+  height: 90px
   box-sizing: border-box
   center($wrapperWidth)
 
   li
     col(1/4)
     list-style-type: none
-    height: 25px
-    padding: 10px 0
+    height: 90px
+    width: 21%
+    margin-right: 5%
+
+    &:nth-child(1)
+      width: 180px
+
+    &:nth-child(2)
+      margin-right: 8%
 
   .count
-    font-size: 36px
+    height: 90px
+    line-height: 90px
+    font-size: 50px
     color: $mainRedColor
     float: left
-    margin: 0 5px 0 0
+    margin: 0 7px 0 0
 
   p
     display: block
     font-size: 13px
-    margin: 3px 0 0 0
-
-@keyframes movementLeft
-  from
-    left: 0
-  to
-    left: 105%
-
-@keyframes movementRight
-  from
-    right: 0
-  to
-    right 105%
+    margin: 31px 0 0 0

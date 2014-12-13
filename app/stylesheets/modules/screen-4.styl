@@ -1,3 +1,5 @@
+// screen 4
+
 .screen-4
   @extend .screen-2
 
@@ -18,14 +20,15 @@
         background-color: $mainGreenColorHover
 
   .additional-block
-    center(600px)
-    box-sizing: border-box
-    border-top: 2px solid $mainGreyColor
-    padding: 30px 0 0 0
+    center(770px)
 
-    p
-      float: left
-      margin: 0 35px 0 10px
-
-    .button
-      padding: 0 25px
+    &::before
+      content: ''
+      width: 730px
+      height: 2px
+      position: absolute
+      left: 20px
+      right: 20px
+      top: 0
+      box-sizing: border-box
+      background-color: $mainGreyColor

@@ -1,13 +1,11 @@
 class Application
+  MAP_COUNTER_DURATION = 3000
   MOVING_DURATION = 800
 
   constructor: ->
     @initUi()
     @events()
-
-    winHeight = @_windowHeight()
-    @_setHead(winHeight)
-    @fromTop = winHeight
+    @_pageDimensions()
     @offsetArray = @_calcOffsetArray()
 
   initUi: ->
@@ -20,6 +18,7 @@ class Application
       headPicture: $('.head-picture')
       page: $('.js-page')
       menuButton: $('nav li')
+      mapSlider: $('.map-slider-screen')
       mapButton: $('.map-buttons li')
       plane: $('.plane')
       layerOne: $('.layer-one')
@@ -27,16 +26,19 @@ class Application
       layerThree: $('.layer-three')
       layerFour: $('.layer-four')
       layerFive: $('.layer-five')
+      currentMapSlide: $('.schemes > .active')
+      marker: $('.marker')
 
   events: ->
     @ui.wind.on 'scroll', @onScrollHeader
     @ui.wind.on 'scroll', @onScrollPages
+    @ui.wind.on 'scroll', @onRefreshCounter
     @ui.menuButton.on 'click', @onMoveToScreen
     @ui.mapButton.on 'click', @onClickMapButton
     @ui.body.on 'mousemove', @onMoveHeadBackground
 
   onScrollHeader: =>
-    if @ui.wind.scrollTop() < @fromTop
+    if @ui.wind.scrollTop() < @windowHeight
       @ui.header.removeClass('displayed')
       @ui.footer.removeClass('displayed')
     else
@@ -49,6 +51,19 @@ class Application
     _.each @offsetArray, (value, key) =>
       if fromTop > value - 200 and fromTop < @offsetArray[key + 1]
         @ui.menuButton.removeClass('active').eq(key).addClass('active')
+
+  onRefreshCounter: =>
+    fromTop = @ui.wind.scrollTop()
+    mapSliderTop = @ui.mapSlider.offset().top
+    mapSliderBottom = mapSliderTop + @ui.mapSlider.height()
+
+    if fromTop < mapSliderTop - @windowHeight or fromTop > mapSliderBottom
+      @isActiveCounter = true
+      @ui.marker.find('.counter-value').html('0')
+    else if fromTop > mapSliderTop or fromTop < mapSliderBottom
+      console.log fromTop, mapSliderTop
+      @setCounters(@isActiveCounter)
+      @isActiveCounter = false
 
   onMoveToScreen: (event) =>
     self = $(event.currentTarget)
@@ -78,6 +93,23 @@ class Application
     @_setShift(event, @ui.layerFive, -0.015, -0.015)
     @_setLinearShift(event, @ui.plane, 0.1)
 
+  setCounters: (isActive) ->
+    if isActive
+      $marker = @ui.currentMapSlide.find('.marker')
+
+      _.each $marker, (value, key) =>
+        $self = $(value)
+        $selector = $self.find('.counter-value')
+        maxCount = $self.data('value')
+        @_counter(maxCount, $selector)
+
+  _counter: (value, $selector) ->
+    counter = 0
+    counterFunction = setInterval(=>
+      $selector.html(counter++)
+      clearInterval(counterFunction) if counter is value
+    , MAP_COUNTER_DURATION / value)
+
   _setShift: (event, $selector, xCoef, yCoef) ->
     $selector.css('background-position', "#{xCoef * event.pageX}px #{yCoef * event.pageY}px")
 
@@ -99,8 +131,11 @@ class Application
     array.push(Number.MAX_SAFE_INTEGER)
     array
 
-  _setHead: (height) ->
-    @ui.head.css('height': height)
-    @ui.headPicture.css('height': height - 60)
+  _pageDimensions: ->
+    setTimeout(=>
+      @windowHeight = @_windowHeight()
+      @ui.head.css('height': @windowHeight)
+      @ui.headPicture.css('height': @windowHeight - 90)
+    , 10)
 
 module.exports = Application

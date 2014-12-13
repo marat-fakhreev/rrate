@@ -57,24 +57,23 @@ html
         .layer.layer-five
         .red-label
           .icon-logo
-          span.text--center
-            | Облегчим твой выбор жилья на 33% <br> за один клик и покажем все необходимое <br> на одной странице.
+          .label-text.text--center
+            | Облегчим твой выбор жилья на <span class="hight">33%</span> <br> за <span class="hight">1</span> клик и покажем все необходимое <br> на <span class="hight">1</span> странице.
           form
             .fa.fa-search
-            input(type="text" placeholder="Введите адрес")
+            input(type="text" placeholder="Введи адрес")
             input(type="submit" class="button" value="Оценить")
           p.text--center
-            | Оцениваем социальную инфраструктуру района.
-
+            | Оцениваем социальную инфраструктуру района по <br> Вашим индивидуальным потребностям.
       ul.head-list
-        li
-          .count 150
-          p
-            | Типов объектов <br> для аналитики
         li
           .count 8
           p
             | Жизенно важных <br> категорий
+        li
+          .count >150
+          p
+            | Типов объектов <br> для аналитики
         li
           .count 32
           p
@@ -106,12 +105,21 @@ html
               span Доска почета
             li
               span Контакты
+        ul.social-block
+          li
+            a(href='#')
+              .fa.fa-vk
+          li
+            a(href='#')
+              .fa.fa-instagram
+          li
+            a(href='#')
+              .fa.fa-facebook-square
 
 
     section.js-page.screen.screen-2
       .screen-inner
         h1 Как это работает
-
         .map
           .map-slider
             .icon-logo-cut
@@ -123,7 +131,6 @@ html
                   path(class="left" fill="none" d="M594.5,522l-99.9-17.2l-84.8-32.2l-93.4-48.3L253,384.6L68.2,318l-14,31.1l-54.8-19.3" width="150px")
               li 2
               li 3
-
           .map-buttons-block
             ul.map-buttons
               li.active Для студента
@@ -134,58 +141,67 @@ html
     section.screen.screen-3.screen--dark
       .screen-inner
         h2.text--center.text--with-shift
-          | Интересно попробовать? Оцени свой дом сейчас!
+          | Интересно попробовать? Оцени сейчас!
         a(href='#' class='button button--red button--center') Перейти к поиску
 
 
     section.js-page.screen.screen-4.map-slider-screen
       .screen-inner
         h1 Решение для бизнеса
-
         .map
           .map-slider
             .icon-logo-cut
             p.text--center
               | Место - одно из ключевых «координат» маркетингового планирования. Вы узнаете, на <br> сколько месторасположение объекта коммерческой недвижимости подходит <br> Вашему Бизнесу.
             ul.schemes
-              li.active 1
+              li.active
+                .marker(data-value='88')
+                  span.counter-value 0
+                  | /100
+                .marker(data-value='94')
+                  span.counter-value 0
+                  | /100
+                .marker(data-value='100')
+                  span.counter-value 0
+                  | /100
+                .marker(data-value='67')
+                  span.counter-value 0
+                  | /100
               li 2
               li 3
-
           .map-buttons-block
             ul.map-buttons
               li.active Кафе
               li Офис
               li Склад
-
         .additional-block
           p
-            | Попробуйте оценить свой бизнес <br> на основе многочисленых экспертиз
+            | Оцените предложения коммерческой недвижимости <br> на соответствие вашему бизнесу
           .button.button--green.button--with-arrow
             span
-              | Сделать экспертизу
+              | Попробовать бесплатно
               .icon-arrow
 
     section.js-page.screen.screen-5.screen--dark
       .screen-inner
         h1 Партнерская программа
-        p.text--center.text--with-shift
-          | У нас есть несколько интересных инструментов для Вас, которые помогут вам продать <br> объявление быстрее.
-        article.text-block.text-block-api
+        p.text--center
+          | У нас есть инструменты для Вас, которые помогут вам продать объявление быстрее.
+        article.text-block.text-block-left
           .circle-api
           .text
             h2 Наше API для оценки
             p
-              | Встраивая наше API, вы увеличиваете возможности вашего сайта. Наш код уже используют несколько тестовых серверов. Будьте первыми, кто
+              | Встраивая наше API, вы увеличиваете возможности вашего сайта. Наш код уже используют тестовые сервера. Будьте первыми, кто повысит конверсию вашего сайта.
             .button.button--grey.button--with-arrow
               span
                 | Подробнее
                 .icon-arrow
-        article.text-block.text-block-document
+        article.text-block.text-block-right
           .text
-            h2 Площадка для вас
+            h2 Собственная площадка
             p
-              | Площадка для ваших объявлений на нашем сайте! <br> У нас есть умный алгоритм выдачи результатов <br> только тем людям, которые ими интересуются
+              | Публикуйте ваши объявления на сайте и получайте <br> прямых клиентов, которые ищут именно вас.
             .button.button--grey.button--with-arrow
               span
                 | Подробнее
@@ -195,21 +211,44 @@ html
 
     section.js-page.screen.screen-6
       .screen-inner
-        h1 Доска почета
-        p.text--center.text--with-shift
-          | Совсем скоро у нас появится отдельная страница для тех, кто помог нам и внес свой <br> вклад в проект! А пока, Вы можете заполнить анкету и в ответ <br> вы попадете на нашу доску!
-        p.text--center.text--with-shift
-          | Ведь именно по Вашим ответам, мы и строим рейтинг недвижимости!
-        .button.button--grey.button--with-arrow.button--center
-          span
-            | Помочь сервису
-            .icon-arrow
-
+        h1 Впиши свое имя в историю создания онлайн сервиса.
+        p.text--center
+          | 31го декабря на отдельной странице создателей мы покажем всех, <br> кто помог нашему сервису и внес свой вклад в проект.
+        article.text-block.text-block-left
+          .circle-rocket
+          .text
+            p
+              | Стартапы, IT-компании, Социальные Сети, Венчурные Фонды, сегодня услышав эти слова мы представляем харизматичных основателей вместе гениальной командой разработчиков, дизайнеров, маркетологов и инвесторов вложивших в революционную идею. Всех их, проделавших нелегкий путь от провалов, до ошеломляющих успехов. Тех, кто несмотря ни на что шел к своей мечте. <br> И как же нам хотелось быть причастными к этой группе людей?!
+        p.text--center.text--width-offset.text--without-shift
+          | Сегодня, пока наши разработчики трудятся не покладая рук над совершенным кодом, <br> мы призываем всех поучаствовать в процессе разработки он-лайн продукта.
+        .additional-block
+          p
+            | Приглашаем вас в нашу команду!
+          .button.button--grey.button--with-arrow
+            span
+              | Участвовать
+              .icon-arrow
+        .social-buttons-block
+          h2.text--center
+            | Следите за развитием проекта!
+          ul
+            li.button.button--grey
+              a(href='#')
+                .fa.fa-facebook-square
+                | Facebook
+            li.button.button--grey
+              a(href='#')
+                .fa.fa-vk
+                | Vkontakte
+            li.button.button--grey
+              a(href='#')
+                .fa.fa-instagram
+                | Instagram
 
     footer
       .footer-inner
         p
-          | Наш сервис работает в тестовом режиме, помогите нам сделать его лучше <br> и получите настоящую медаль создателя он-лайн сервиса!
+          | Только до 31 декабря получи доступ к альфа версии и стань одним из 100 создателей сервиса
         a(href='#' class='button')
           span
             .icon-pen
