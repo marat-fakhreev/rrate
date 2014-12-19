@@ -39,7 +39,9 @@ class LandingView extends Marionette.ItemView
 
   onRender: ->
     @ui.wind = $(window)
-    @_pageDimensions()
+    setTimeout(=>
+      @_pageDimensions()
+    , 10)
     @offsetArray = @_calcOffsetArray()
     @initWindowEvents()
 
@@ -71,8 +73,7 @@ class LandingView extends Marionette.ItemView
       @isActiveCounter = false
 
   onResize: =>
-    @ui.head.css('height': @_windowHeight())
-    @ui.headPicture.css('height': @_windowHeight() - 90)
+    @_pageDimensions()
 
   onMoveToScreen: (event) =>
     self = $(event.currentTarget)
@@ -141,9 +142,8 @@ class LandingView extends Marionette.ItemView
     array
 
   _pageDimensions: ->
-    setTimeout(=>
-      @ui.head.css('height': @_windowHeight())
-      @ui.headPicture.css('height': @_windowHeight() - 90)
-    , 10)
+    @windowHeight = @_windowHeight()
+    @ui.head.css('height': @windowHeight)
+    @ui.headPicture.css('height': @windowHeight - 90)
 
 module.exports = LandingView
