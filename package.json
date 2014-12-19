@@ -37,10 +37,26 @@
   },
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.js",
-    "underscore": "./bower_components/underscore/underscore.js"
+    "underscore": "./bower_components/underscore/underscore.js",
+    "backbone": "./bower_components/backbone/backbone.js",
+    "marionette": "./bower_components/marionette/lib/backbone.marionette.js",
+    "moment": "./bower_components/moment/min/moment.min.js"
   },
   "browserify-shim": {
     "jquery": "$",
-    "underscore": "_"
+    "underscore": "_",
+    "backbone": {
+      "exports": "Backbone",
+      "depends": [
+        "jquery",
+        "underscore"
+      ]
+    },
+    "marionette": {
+      "exports": "Marionette",
+      "depends": [
+        "backbone"
+      ]
+    }
   }
 }

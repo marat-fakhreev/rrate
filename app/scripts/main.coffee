@@ -1,6 +1,5 @@
-require('jquery')
-require('underscore')
+require('marionette')
 
 App = require('scripts/application')
 
-$ -> new App
+$ -> App.start()
