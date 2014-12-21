@@ -129,8 +129,13 @@
 
 .clouds
   position: absolute
-  width: 1024px
   top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  width: 200%
+  margin-left: -50%
+  overflow: hidden
 
   .clouds-big
     sprite($clouds)
@@ -138,16 +143,27 @@
     left: -100px
 
   .clouds-1
-    sprite($cloud-1)
+    background-image: url('../images/cloud-1.png')
+    width: 100%
+    height: 191px
     position: absolute
+    top: 0
 
   .clouds-2
-    sprite($cloud-2)
+    background-image: url('../images/cloud-2.png')
+    width: 100%
+    height: 204px
     position: absolute
+    top: 40%
+    left: -10%
 
   .clouds-3
-    sprite($cloud-3)
+    background-image: url('../images/cloud-3.png')
+    width: 100%
+    height: 155px
     position: absolute
+    top: 80%
+    left: -20%
 
 .share-block
   center(300px)

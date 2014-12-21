@@ -75,7 +75,7 @@ class LandingView extends Marionette.ItemView
   onResize: =>
     @_pageDimensions()
 
-  onMoveToScreen: (event) =>
+  onMoveToScreen: (event) ->
     self = $(event.currentTarget)
     index = self.index()
     fromTop = @ui.page.eq(index).offset().top
@@ -87,16 +87,19 @@ class LandingView extends Marionette.ItemView
       @ui.menuButton.removeClass('active')
       self.addClass('active')
 
-  onClickMapButton: (event) =>
+  onClickMapButton: (event) ->
     self = $(event.currentTarget)
     index = self.index()
     $map = self.closest('.map')
 
+    @ui.marker.find('.counter-value').html('0')
+    @isActiveCounter = true
+    @setCounters(@isActiveCounter)
     @ui.mapButton.removeClass('active')
     self.addClass('active')
     $map.find('.schemes li').removeClass('active').eq(index).addClass('active')
 
-  onMoveHeadBackground: (event) =>
+  onMoveHeadBackground: (event) ->
     @_setShift(event, @ui.layerTwo, 0.003, 0)
     @_setShift(event, @ui.layerThree, 0.01, 0)
     @_setShift(event, @ui.layerFour, -0.015, 0.015)

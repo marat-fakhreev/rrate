@@ -2,7 +2,12 @@
   background-color: $skyColor
 
   header
-    position: relative
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: 70px
+    z-index: 1000
 
     .header-inner
       height: 100%
@@ -39,7 +44,7 @@
       margin-top: 15px
 
   .screen
-    padding: 0
+    padding: 70px 0 0 0
     overflow: hidden
 
   .survey-title
@@ -86,6 +91,12 @@
         position: absolute
         top: 156px
         left: 506px
+        opacity: 0
+        transition: all 0.3s ease
+
+        &.active
+          opacity: 1
+          transition: all 0.3s ease
 
       .arial-1
         sprite($rad-1)
@@ -160,8 +171,8 @@
       overflow: hidden
       position: absolute
       bottom: 0
-      left: 50%
-      margin-left: -56px
+      padding: 0 454px
+      box-sizing: border-box
 
       .rocket
         sprite($rocket)
@@ -169,6 +180,36 @@
   .survey-list
     padding: 0 0 40px 0
     box-sizing: border-box
+    position: relative
+
+    ul.survey-circles
+      position: absolute
+      right: -35px
+      top: 20px
+
+      &.fixed
+        position: fixed
+        left: 50%
+        top: 120px
+        z-index: 1000
+        margin-left: 532px
+
+      li.circle
+        width: 15px
+        height: 15px
+        border-radius: 50%
+        background-color: transparent
+        margin: 0 0 6px 0
+        box-sizing: border-box
+        border: 2px solid rgba(#fff, 0.5)
+        cursor: pointer
+
+        &.completed
+          background-color: #fff
+
+        &.current
+          background-color: $mainRedColor
+          border: 2px solid $mainRedColor
 
     .survey-item
       padding: 110px 0 0 0
@@ -200,6 +241,7 @@
       padding: 10px 74px
       font-size: 18px
       resize: none
+      margin: 35px 0 0 0
 
       &::-webkit-input-placeholder
          color: rgba($mainGreyColor, 0.5)
@@ -229,8 +271,9 @@
 
     .question
       clearfix()
-      padding: 50px 0 0 0
+      margin: 50px 0 0 0
       position: relative
+      box-sizing: border-box
 
       &:first-child
         padding: 0
@@ -284,9 +327,6 @@
           .q-item
             line-height: 90px
 
-        &:last-child
-          height: 80px
-
       span
         float: left
         font-size: 18px
@@ -295,7 +335,6 @@
       .q-item
         font-size: 20px
         line-height: 40px
-        cursor: pointer
         text-align: center
         color: rgba($mainGreyColor, 0.5)
 
@@ -315,7 +354,6 @@
             position: absolute
             top: 6px
             left: 5px
-
 
   .survey-title-2
     height: 380px
@@ -365,7 +403,7 @@
         line-height: 40px
         background-color: $lightBgColor
         text-align: center
-        color: #595959
+        color: rgba($mainGreyColor, 0.5)
         cursor: pointer
 
         &:first-child
@@ -384,9 +422,23 @@
           color: #fff
           background-color: $mainRedColor
 
-    .city
+    .cities
       width: 190px
       margin: 0 55px 0 0
+
+      .city
+        margin: 8px 0 0 0
+        height: 40px
+        border-radius: 5px
+        background-color: $lightBgColor
+        line-height: 40px
+        padding: 0 20px
+        box-sizing: border-box
+        font-size: 18px
+
+      .cities-list
+        overflow: hidden
+        height: 0px
 
     .age-list
       width: 628px
@@ -425,6 +477,35 @@
     .children
       margin: 0 55px 0 0
 
+    .checker
+      width: 20px
+      height: 20px
+      border-radius: 3px
+      background-color: #bbb
+      position: relative
+      top: 10px
+      float: left
+      margin: 0 10px 0 0
+      cursor: pointer
+
+      .fa-check
+        display: none
+        width: 20px
+        font-size: 14px
+        line-height: 20px
+        text-align: center
+        color: #fff
+
+      &.active
+        background-color: $mainRedColor
+
+        .fa-check
+          display: block
+
+    .desc
+      line-height: 38px
+      font-size: 18px
+
   .survey-title-3
     height: 580px
     position: relative
@@ -435,8 +516,8 @@
       overflow: hidden
       position: absolute
       bottom: 0
-      left: 50%
-      margin-left: -487px
+      padding: 0 20px
+      box-sizing: border-box
 
       .family
         sprite($family)
