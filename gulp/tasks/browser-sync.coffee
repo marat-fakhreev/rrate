@@ -5,15 +5,15 @@ prism = require('connect-prism')
 config = require('../config')
 
 gulp.task 'browser-sync', ->
-  # prism.create(
-  #   name: 'serve'
-  #   mode: 'mock'
-  #   context: '/api'
-  #   host: 'localhost'
-  #   port: 8001
-  #   delay: 0
-  #   rewrite: {}
-  # )
+  prism.create(
+    name: 'serve'
+    mode: 'mock'
+    context: '/temp_api'
+    host: 'localhost'
+    port: 8001
+    delay: 0
+    rewrite: {}
+  )
 
   browserSync
     port: config.ports.server
@@ -21,7 +21,7 @@ gulp.task 'browser-sync', ->
     notify: false
     server:
       baseDir: "#{config.publicDir}"
-      # middleware: [prism.middleware, historyApiFallback]
+      middleware: [prism.middleware]
     files: [
       "#{config.publicDir}/**"
       "!#{config.publicDir}/**.map"

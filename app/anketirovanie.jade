@@ -1,0 +1,220 @@
+extends templates/layout
+
+block content
+  body.survey
+    #fb-root
+    | <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+
+    header.displayed
+      .header-inner
+        .logo
+          .icon-logo
+          .logo-text
+            span Рядом
+        span.title Анкетирование
+        a(href='#', class='button button--red') Написать нам
+        span.stat 42% отвечено
+
+    section.screen
+      .screen-inner
+        .survey-title.survey-title-1
+          h2
+            | 9,6* минут вашей жизни <br> польза для <span class='color--red'>1 000 000</span> пользователей, <br> измеримая в сутках.
+          .rocket-block
+            .rocket
+        .survey-box
+          .title-box
+            h5
+              | Добро пожаловать на страницу анкетирования. Миссия нашего сервиса облегчить процесс выбора жилья, помочь пользователю определится с районом, учитывая его собственные предпочтения.
+          h5.survey-box-title
+            | Выберите оптимальное время пешей доступности
+          .map
+            .map-slider
+              .icon-logo-cut
+              .arials
+                li.arial.arial-1
+                li.arial.arial-2
+                li.arial.arial-3
+                li.arial.arial-4
+            .map-buttons-block
+              ul.map-buttons
+                li.active 15 мин ~ 1,3 км
+                li 30 мин ~ 2,5 км
+                li 45 мин ~ 3,7 км
+                li 60 мин ~ 5 км
+          .survey-list
+            .survey-item
+              .survey-list-title
+                h5 Поесть
+                .items
+                  .item Необходимо
+                  .item Желательно
+                  .item Не интересует
+              .questions-list
+                .question
+                  .arrows-block
+                    .arrow.top-arrow.fa.fa-long-arrow-up
+                    .arrow.bottom-arrow.fa.fa-long-arrow-down
+                  ul
+                    li
+                      span Eда
+                      .q-items
+                        .q-item
+                          .fa.fa-circle.active
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                    li
+                      span Рестораны Рестораны Рестораны Рестораны Рестораны
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                    li
+                      span Рестораны
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                    li
+                      span Рестораны
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                    li
+                      span Рестораны
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                  textarea(class="question-message", placeholder="Напишите свое мнение тут")
+                .question
+                  ul
+                    li
+                      span Eда
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                    li
+                      span Рестораны
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                    li
+                      span Рестораны
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                    li
+                      span Рестораны
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                    li
+                      span Рестораны
+                      .q-items
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                        .q-item
+                          .fa.fa-circle
+                  textarea(class="question-message", placeholder="Напишите свое мнение тут")
+
+
+        .survey-title.survey-title-2
+          h2
+            | Нам необходимо определить важность <br> объектов и услуг, которая соответствует Вашим <br><span class='color--red'>собственным представлениям</span> об идеальном жилье
+          .baloons-block
+            .baloon-left
+            .baloon-right
+        .survey-box
+          .title-box
+            h5
+              | Для удобства сервиса мы создали преднастройки , основанные на персонализации поиска. Расскажите о себе.
+          .client-form
+            .form-line
+              .line-item.city
+                span Ваш город
+              .line-item.age
+                span Ваш возраст
+                ul.list.age-list
+                  li.active от 18 до 24 лет
+                  li от 25 до 33 лет
+                  li от 34 до 50 лет
+                  li больше 50 лет
+            .form-line
+              .line-item.income
+                span Ваш ежемесячный доход в рублях
+                ul.list.income-list
+                  li.active до 30 000р
+                  li 30 000 - 60 000
+                  li 60 000 - 100 000
+                  li более 100 000
+              .line-item.civility
+                span Ваш пол
+                ul.list.civility-list
+                  li.active Муж
+                  li Жен
+            .form-line
+              .line-item.marial-status
+                span Ваше семейное положение
+                ul.list.marial-status-list
+                  li.active Холост
+                  li Женат
+              .line-item.children
+                span Наличие детей
+                ul.list.has-children
+              .line-item.private-car
+                span Наличие машины
+                ul.list.has-private-car
+
+        .survey-title.survey-title-3
+          h2
+            | Наша команда и эта прекрасная семья <br> благодарит тебя за вклад в развитие проекта
+          #send_form.send-form.button.button--red.button--center Отправить ответы
+          .family-block
+            .family
+        .survey-box.footer-box
+          h5.text--center
+            | Это покажется Вам наглостью с нашей стороны заставлять <br> Вас делиться результатом анкетирования.
+          .share-block
+            span Поделиться счастьем!
+            .like-block
+              .like
+                div(class="fb-like", data-href="https://developers.facebook.com/docs/plugins/", data-layout="button_count", data-action="like", data-show-faces="true", data-share="false")
+              .like
+                | <div id="vk_like"></div>
+                | <script type="text/javascript">VK.Widgets.Like('vk_like');</script>
+          h5.text--center
+            | Мы, в нашей компании верим в то, что люди в большинстве своем хорошие и склонны приносить пользу друг другу.

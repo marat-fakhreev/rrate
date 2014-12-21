@@ -1,6 +1,7 @@
 Mail = require('scripts/models/mail')
 LandingView = require('scripts/views/landing_view')
 StubView = require('scripts/views/stub_view')
+SurveyLayout = require('scripts/views/layouts/survey')
 
 class Controller extends Marionette.Controller
   index: ->
@@ -8,9 +9,13 @@ class Controller extends Marionette.Controller
     landingView.render()
 
   stub: ->
-    model = new Mail()
+    mail = new Mail()
 
-    stubView = new StubView(model: model)
+    stubView = new StubView(model: mail)
     stubView.render()
+
+  anketirovanie: ->
+    surveyLayout = new SurveyLayout()
+    surveyLayout.render()
 
 module.exports = Controller

@@ -1,0 +1,463 @@
+.survey
+  background-color: $skyColor
+
+  header
+    position: relative
+
+    .header-inner
+      height: 100%
+
+    .logo
+      background-color: $mainRedColor
+      padding: 0 25px
+      height: 100%
+
+      .icon-logo
+        margin: 10px 10px 0 0
+        color: #fff
+
+      .logo-text
+        span
+          line-height: 70px
+          color: #fff
+
+    .title
+      font-size: 18px
+      line-height: 70px
+
+    .stat
+      float: right
+      line-height: 70px
+      margin-right: 20px
+      font-size: 18px
+
+    .button
+      padding: 0 30px
+      height: 40px
+      line-height: 40px
+      float: right
+      margin-top: 15px
+
+  .screen
+    padding: 0
+    overflow: hidden
+
+  .survey-title
+    h2
+      line-height: 1.9
+      text-align: center
+      padding: 80px 0 0 0
+      position: relative
+      z-index: 10
+
+  .survey-box
+    width: 100%
+    background-color: #fff
+    box-sizing: border-box
+
+  .title-box
+    box-sizing: border-box
+    padding: 60px 74px
+    background-color: $lightBgColor
+
+  .survey-box-title
+    display: block
+    padding: 20px 74px
+
+  .map
+    position: relative
+
+  .map-slider
+    sprite($map)
+    width: 1024px
+    height: 435px
+    background-repeat: no-repeat
+
+    .icon-logo-cut
+      font-size: 56px
+      color: $mainRedColor
+      position: absolute
+      top: 156px
+      left: 506px
+      z-index: 10
+
+    .arials
+      .arial
+        position: absolute
+        top: 156px
+        left: 506px
+
+      .arial-1
+        sprite($rad-1)
+        margin-left: -46px
+        margin-top: -35px
+
+      .arial-2
+        sprite($rad-2)
+        margin-left: -74px
+        margin-top: -66px
+
+      .arial-3
+        sprite($rad-3)
+        margin-left: -105px
+        margin-top: -100px
+
+      .arial-4
+        sprite($rad-4)
+        margin-left: -145px
+        margin-top: -135px
+
+  .map-buttons-block
+    width: 875px
+    position: absolute
+    bottom: 30px
+    left: 50%
+    margin-left: -438px
+
+    li
+      col(1/4)
+      height: 50px
+      border-radius: 5px
+      background-color: $mainRedColor
+      line-height: 50px
+      text-align: center
+      font-size: 18px
+      color: #fff
+      cursor: pointer
+      display: block
+      position: relative
+
+      &:hover
+        background-color: $mainRedColorHover
+
+      &.active
+        background-color: $mainGreyColor
+        cursor: default
+
+        &:hover
+          background-color: $mainGreyColor
+
+        &::before
+          content: ''
+          top: -17px
+          left: 50%
+          border: solid transparent
+          height: 0
+          width: 0
+          position: absolute
+          pointer-events: none
+          border-color: transparent
+          border-bottom-color: $mainGreyColor
+          border-width: 10px
+          margin-left: -10px
+
+  .survey-title-1
+    height: 360px
+    position: relative
+
+    .rocket-block
+      height: 65px
+      overflow: hidden
+      position: absolute
+      bottom: 0
+      left: 50%
+      margin-left: -56px
+
+      .rocket
+        sprite($rocket)
+
+  .survey-list
+    padding: 0 0 40px 0
+    box-sizing: border-box
+
+    .survey-item
+      padding: 110px 0 0 0
+
+    .survey-list-title
+      box-sizing: border-box
+      padding: 0 75px 20px 75px
+      border-bottom: 2px solid $lightBgColor
+      clearfix()
+
+    h5
+      float: left
+
+    span
+      width: 430px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+
+    textarea
+      @extend h5
+      display: block
+      border: none
+      width: 100%
+      height: 90px
+      outline: none
+      background-color: $lightBgColor
+      box-sizing: border-box
+      padding: 10px 74px
+      font-size: 18px
+      resize: none
+
+      &::-webkit-input-placeholder
+         color: rgba($mainGreyColor, 0.5)
+
+      &:-moz-placeholder
+         color: rgba($mainGreyColor, 0.5)
+
+      &::-moz-placeholder
+         color: rgba($mainGreyColor, 0.5)
+
+      &:-ms-input-placeholder
+         color: rgba($mainGreyColor, 0.5)
+
+    .items
+    .q-items
+      width: 440px
+      height: 100%
+      float: right
+
+      .item
+      .q-item
+        span(1/3)
+        line-height: 31px
+        text-align: center
+        font-size: 18px
+        height: 100%
+
+    .question
+      clearfix()
+      padding: 50px 0 0 0
+      position: relative
+
+      &:first-child
+        padding: 0
+
+      .arrows-block
+        position: absolute
+        top: 0
+        left: -40px
+        width: 40px
+
+        .arrow
+          background-color: rgba(#fff, 0.7)
+          height: 45px
+          width: 40px
+          line-height: 45px
+          text-align: center
+          cursor: pointer
+          box-sizing: border-box
+
+          &:hover
+            background-color: #fff
+
+          &:active
+            color: $mainRedColor
+
+        .top-arrow
+          border-top-left-radius: 5px
+          border-bottom: 1px solid #fff
+
+        .bottom-arrow
+          border-bottom-left-radius: 5px
+
+      li
+        padding: 0 75px
+        height: 45px
+        background-color: #fff
+        overflow: hidden
+        cursor: pointer
+
+        &:nth-child(even)
+          background-color: $lightBgColor
+
+        &:first-child
+          height: 90px
+
+          span
+            @extend h5
+            font-size: 24px
+            line-height: 90px
+
+          .q-item
+            line-height: 90px
+
+        &:last-child
+          height: 80px
+
+      span
+        float: left
+        font-size: 18px
+        line-height: 40px
+
+      .q-item
+        font-size: 20px
+        line-height: 40px
+        cursor: pointer
+        text-align: center
+        color: rgba($mainGreyColor, 0.5)
+
+        &:hover
+          color: $mainGreyColor
+
+        .active
+          color: $mainRedColor
+          position: relative
+
+          &::after
+            content: ''
+            background-color: #fff
+            width: 8px
+            height: 8px
+            border-radius: 50%
+            position: absolute
+            top: 6px
+            left: 5px
+
+
+  .survey-title-2
+    height: 380px
+    position: relative
+
+    h2
+      padding: 90px 0 0 0
+
+    .baloons-block
+      height: 340px
+      width: 100%
+      overflow: hidden
+      position: absolute
+      bottom: 0
+
+      .baloon-left
+        position: absolute
+        left: 50px
+        bottom: -140px
+        sprite($ball-left)
+
+      .baloon-right
+        position: absolute
+        right: 50px
+        bottom: -110px
+        sprite($ball-right)
+
+  .client-form
+    padding: 0 75px 50px 75px
+    clearfix()
+
+    span
+      font-size: 24px
+
+    .form-line
+      margin: 60px 0 0 0
+      clearfix()
+
+    .line-item
+      float: left
+
+    .list
+      height: 40px
+      margin: 8px 0 0 0
+
+      li
+        line-height: 40px
+        background-color: $lightBgColor
+        text-align: center
+        color: #595959
+        cursor: pointer
+
+        &:first-child
+          border-top-left-radius: 5px
+          border-bottom-left-radius: 5px
+
+        &:last-child
+          border-top-right-radius: 5px
+          border-bottom-right-radius: 5px
+
+        &:hover
+          background-color: #bbb
+          color: #fff
+
+        &.active
+          color: #fff
+          background-color: $mainRedColor
+
+    .city
+      width: 190px
+      margin: 0 55px 0 0
+
+    .age-list
+      width: 628px
+
+      li
+        span(1/4)
+        text-align: center
+
+    .income
+      margin: 0 55px 0 0
+
+    .income-list
+      width: 630px
+
+      li
+        span(1/4)
+        text-align: center
+
+    .civility-list
+      width: 189px
+
+      li
+        span(1/2)
+        text-align: center
+
+    .marial-status
+      margin: 0 55px 0 0
+
+    .marial-status-list
+      width: 190px
+
+      li
+        span(1/2)
+        text-align: center
+
+    .children
+      margin: 0 55px 0 0
+
+  .survey-title-3
+    height: 580px
+    position: relative
+
+    .family-block
+      height: 340px
+      width: 100%
+      overflow: hidden
+      position: absolute
+      bottom: 0
+      left: 50%
+      margin-left: -487px
+
+      .family
+        sprite($family)
+
+  .send-form
+    width: 320px
+    height: 60px
+    margin: 40px auto
+    display: block
+    cursor: pointer
+    position: relative
+    z-index: 100
+    font-size: 24px
+    line-height: 60px
+
+  .footer-box
+    padding: 50px 0 70px
+
+    h5
+      center(740px)
+      margin: 30px auto 0
+
+    .share-block
+      margin-top: 50px
