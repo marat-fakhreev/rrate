@@ -1,0 +1,59 @@
+extends templates/layout
+
+block content
+  body.promo
+    #fb-root
+    | <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+
+    header.displayed
+      .header-inner
+        .logo
+          .icon-logo
+          .logo-text
+            span Рядом
+            i Alpha версия
+        nav
+          ul
+            li.active
+              span Оценить
+            li
+              span Как это работает
+            li
+              span Бизнесу
+            li
+              span Партнерам
+            li
+              span Доска почета
+            li
+              span Контакты
+        ul.social-block
+          li
+            a(href='#')
+              .fa.fa-vk
+          li
+            a(href='#')
+              .fa.fa-instagram
+          li
+            a(href='#')
+              .fa.fa-facebook-square
+
+    section.screen
+      .screen-inner
+        .tooth-block
+          .tooth
+          .clouds
+            .clouds-1
+            .clouds-2
+          h2.red Прыгай от счастья!
+          h2 ты относишься к 1,35% людей <br>«внимательных к деталям»!
+        .promo-block
+          p
+            | Они более восприимчивы, более открыты новым знаниям/возможностям, не <br> равнодушны к происходящему вокруг них. Своей жизнью, они подтверждают огромную <br> ценность каждого прожитого дня. Это те, кто меняют наш мир к лучшему. <br>Ты смело можете приписать свое имя к ним.
+          .share-block
+            span Поделиться счастьем!
+            .like-block
+              .like
+                div(class="fb-like", data-href="https://developers.facebook.com/docs/plugins/", data-layout="button_count", data-action="like", data-show-faces="true", data-share="false")
+              .like
+                | <div id="vk_like"></div>
+                | <script type="text/javascript">VK.Widgets.Like('vk_like');</script>

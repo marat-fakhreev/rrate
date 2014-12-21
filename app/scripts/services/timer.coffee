@@ -2,6 +2,7 @@ Moment = require('moment')
 
 class Timer
   INTERVAL = 1000
+  EVENT_DATE = '2015-01-07'
 
   constructor: ($timerSelector) ->
     @$days = $timerSelector.find('.days .count')
@@ -13,7 +14,7 @@ class Timer
 
   _timer: ->
     currentTime = Moment()
-    eventTime = Moment().days(currentTime.days() + 1).hours(4).minutes(0).seconds(0)
+    eventTime = Moment(EVENT_DATE)
     diffTime = eventTime - currentTime
     duration = Moment.duration(diffTime, 'milliseconds')
 

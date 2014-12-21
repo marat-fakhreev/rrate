@@ -1,0 +1,38 @@
+.promo
+  background-color: $skyColor
+
+  .screen
+    padding: 120px 0 0 0
+
+  .tooth-block
+    height: 300px
+    width: 100%
+    position: relative
+
+    .tooth
+      sprite($tooth)
+      position: absolute
+      z-index: 10
+      left: 60px
+
+    h2
+      line-height: 2
+      position: relative
+      left: 420px
+      top: 20px
+
+      &.red
+        color: $mainRedColor
+
+  .promo-block
+    width: 100%
+    box-sizing: border-box
+    padding: 100px 0 150px
+    background-color: #fff
+
+    p
+      width: 760px
+      text-align: center
+      display: block
+      margin: 0 auto
+      line-height: 1.7

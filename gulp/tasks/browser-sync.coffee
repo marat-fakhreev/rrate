@@ -21,7 +21,7 @@ gulp.task 'browser-sync', ->
     notify: false
     server:
       baseDir: "#{config.publicDir}"
-      middleware: [prism.middleware, historyApiFallback]
+      # middleware: [prism.middleware, historyApiFallback]
     files: [
       "#{config.publicDir}/**"
       "!#{config.publicDir}/**.map"

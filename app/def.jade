@@ -1,0 +1,52 @@
+extends templates/layout
+
+block content
+  body.stub.red-label
+    .line
+    .label
+      .label-form.label-form--before.show
+        h3.text--center До запуска осталось
+        .timer
+          div.two-dot :
+          div.two-dot :
+          div.two-dot :
+          ul.timer-list
+            li.days
+              span.count 00
+              span.type дней
+            li.hours
+              span.count 00
+              span.type часов
+            li.minutes
+              span.count 00
+              span.type минут
+            li.seconds
+              span.count 00
+              span.type секунд
+        p.text--center
+          | Сейчас мы активно тестируем наш сервиc, как только он будет готов, мы сообщим Вам! Для этого оставьте свою почту и мы напишем Вам!
+        form#stub_form
+          .fa.fa-search
+          input(type="text" class='mail-field' placeholder="Введи адрес почты")
+          input(type="submit" class="button" value="Уведомить меня")
+      .label-form.label-form--after
+        .icon-logo
+        h3.text--center Спасибо!
+        p.text--center
+          | Хочешь стать участником проекта и попасть на доску почета тех, кто нам помог? Заполни нашу анкету и мы сможем сделать наш рейтинг более правильным!
+        a(href="#" class="button button--small") Заполнить анкету
+
+    footer.stub-footer
+      .footer-inner
+        span Следи за нашей командой
+
+        ul.social-small-block
+          li
+            a(href='#')
+              .fa.fa-facebook-square
+          li
+            a(href='#')
+              .fa.fa-instagram
+          li
+            a(href='#')
+              .fa.fa-vk
