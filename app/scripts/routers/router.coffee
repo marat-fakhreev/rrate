@@ -1,7 +1,10 @@
 class Router extends Marionette.AppRouter
-  # temporary cludge with .html
   appRoutes:
     '': 'index'
+    'api': 'stub'
+    'bus': 'stub'
+    'def': 'stub'
+    # temporary cludge with .html
     'api.html': 'stub'
     'bus.html': 'stub'
     'def.html': 'stub'
