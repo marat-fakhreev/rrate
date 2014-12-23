@@ -16,6 +16,7 @@ class SurveyLayout extends Marionette.LayoutView
     'surveyTitle': '.survey-title'
     'surveyList': '.survey-list'
     'surveyCircles': '.survey-circles'
+    'surveyCircle': '.survey-circles .circle'
 
   events:
     'click @ui.formListButton': 'onChooseItem'
@@ -23,11 +24,13 @@ class SurveyLayout extends Marionette.LayoutView
     'click @ui.checkbox': 'onClickCircle'
     'click @ui.mapButton': 'onClickMapButton'
     'click @ui.arrowButton': 'onClickArrowButton'
+    'click @ui.surveyCircle': 'onClickSurveyCircle'
     'mousemove @ui.surveyTitle': 'onMoveClouds'
 
   onRender: ->
-    @ui.wind = $(window)
-    @ui.wind.on 'scroll', @onScrollPages
+    @wind = $(window)
+    @wind.on 'scroll', @onScrollPages
+    @_initSurveyCircles()
 
   onChooseItem: (event) ->
     self = $(event.currentTarget)
@@ -63,17 +66,34 @@ class SurveyLayout extends Marionette.LayoutView
       surveyItem = self.closest('.survey-item')
 
       if index isnt 0
-        question = surveyItem.find('.question').prev()
-        if question.index() is 0
+        $question = surveyItem.find('.question').prev()
+
+        if $question.index() is 0
           fromTop = surveyItem.find('.question').prev().offset().top - 150
         else
           fromTop = surveyItem.find('.question').prev().offset().top
       else
         fromTop = surveyItem.prev().find('.question').eq(-1).offset().top
 
-    @$el.animate
-      scrollTop: fromTop - 90
-      MOVING_DURATION
+    @_moveFromTop(fromTop)
+
+  onClickSurveyCircle: (event) ->
+    self = $(event.currentTarget)
+    index = self.index()
+    fromTop = false
+    @ui.surveyCircle.removeClass('active')
+    self.addClass('active')
+
+    _.each @ui.question, (value, key) ->
+      $question = $(value)
+
+      if index is key
+        if $question.index() is 0
+          fromTop = $question.offset().top - 150
+        else
+          fromTop = $question.offset().top
+
+    @_moveFromTop(fromTop)
 
   onMoveClouds: (event) ->
     self = $(event.currentTarget)
@@ -85,7 +105,7 @@ class SurveyLayout extends Marionette.LayoutView
     @_setLinearShift(event, $object, 0.01, 0.01, $object.height())
 
   onScrollPages: =>
-    fromTop = @ui.wind.scrollTop()
+    fromTop = @wind.scrollTop()
 
     if fromTop > @ui.surveyList.offset().top - 100
       @ui.surveyCircles.addClass('fixed')
@@ -100,5 +120,22 @@ class SurveyLayout extends Marionette.LayoutView
       left: "#{xCoef * event.pageX}px"
     })
 
+  _initSurveyCircles: ->
+    count = @ui.question.length
+    str = ''
+
+    for i in [0...count]
+      if i is 0
+        str += "<li class='circle active'></li>"
+      else
+        str += "<li class='circle'></li>"
+
+    @ui.surveyCircles.html(str)
+    @bindUIElements()
+
+  _moveFromTop: (fromTop) ->
+    @$el.animate
+      scrollTop: fromTop - 90
+      MOVING_DURATION
 
 module.exports = SurveyLayout
