@@ -94,10 +94,10 @@ class LandingView extends Marionette.ItemView
 
     @ui.marker.find('.counter-value').html('0')
     @isActiveCounter = true
-    @setCounters(@isActiveCounter)
     @ui.mapButton.removeClass('active')
     self.addClass('active')
     $map.find('.schemes li').removeClass('active').eq(index).addClass('active')
+    @setCounters(@isActiveCounter)
 
   onMoveHeadBackground: (event) ->
     @_setShift(event, @ui.layerTwo, 0.003, 0)

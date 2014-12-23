@@ -14,7 +14,7 @@ class Controller extends Marionette.Controller
     stubView = new StubView(model: mail)
     stubView.render()
 
-  anketirovanie: ->
+  questions: ->
     surveyLayout = new SurveyLayout()
     surveyLayout.render()
 

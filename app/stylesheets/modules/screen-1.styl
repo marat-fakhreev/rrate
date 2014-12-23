@@ -191,9 +191,6 @@
         top: 15px
         left: 15px
 
-    .button
-      padding: 0
-
     input
       &[type="text"]
         display: block
@@ -214,23 +211,25 @@
           background-color: $mainGreyColorHover
           cursor: pointer
 
-      &[type="submit"]
-        box-sizing: border-box
-        padding: 0 20px
-        position: absolute
-        top: 5px
-        right: 5px
-        bottom: 5px
-        font-size: 14px
-        font-family: $dinMedium
-        color: $mainGreyColor
-        cursor: pointer
-        height: auto
-        line-height: 17px
-        outline: 0 none
+    a
+    input[type="submit"]
+      display: block
+      box-sizing: border-box
+      padding: 0 20px
+      position: absolute
+      top: 5px
+      right: 5px
+      bottom: 5px
+      font-size: 14px
+      font-family: $dinMedium
+      color: $mainGreyColor
+      cursor: pointer
+      height: auto
+      line-height: 34px
+      outline: 0 none
 
-        &:hover
-          color: $mainRedColor
+      &:hover
+        color: $mainRedColor
 
 ul.head-list
   display: block
@@ -242,13 +241,14 @@ ul.head-list
     col(1/4)
     list-style-type: none
     height: 90px
-    width: 21%
+    width: 20%
     margin-right: 5%
 
     &:nth-child(1)
       width: 180px
 
     &:nth-child(2)
+      width: 250px
       margin-right: 8%
 
   .count

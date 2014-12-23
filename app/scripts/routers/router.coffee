@@ -4,11 +4,11 @@ class Router extends Marionette.AppRouter
     'api': 'stub'
     'bus': 'stub'
     'def': 'stub'
-    'anketirovanie': 'anketirovanie'
+    'questions': 'questions'
     # temporary cludge with ".html" paths
     'api.html': 'stub'
     'bus.html': 'stub'
     'def.html': 'stub'
-    'anketirovanie.html': 'anketirovanie'
+    'questions.html': 'questions'
 
 module.exports = Router
