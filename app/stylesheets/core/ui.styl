@@ -186,6 +186,47 @@
   color: $mainRedColor
   display: inline
 
+.marker
+  position: absolute
+  background: #ffffff
+  display: inline-block
+  padding: 15px
+  box-sizing: border-box
+  border-radius: 5px
+  font-size: 14px
+
+  .title
+    display: block
+    font-size: 18px
+
+  .counter-value
+    color: $mainRedColor
+    font-size: 14px
+
+  &::before
+    content: ""
+    top: 113%
+    left: 33px
+    position: absolute
+    height: 5px
+    width: 5px
+    background-color: $mainRedColor
+    border-radius: 50%
+
+  &::after
+    top: 100%
+    left: 35px
+    content: ""
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+    border: solid transparent
+    border-color: rgba(255, 255, 255, 0)
+    border-top-color: #ffffff
+    border-width: 5px
+    margin-left: -5px
+
 #social
   position: fixed
   top: 0

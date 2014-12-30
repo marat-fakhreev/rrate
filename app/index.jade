@@ -7,6 +7,7 @@ block content
         | «Рядом» - облегчает выбор жилья на 33,3% за 1 клик и показывает все необходимое на 1 странице. <br><br> Проект «Рядом» - это он-лайн сервис для экспресс оценки социальной инфраструктуры района. Анализируя более 150 типов объектов и услуг, сервис предлагает рейтинг местности по 8 жизненно-важным категориям относительно выбранного дома.
       img(src="images/social/SocialSharesLanding.png", alt="")
 
+
     section.js-page.head
       .head-picture
         .layer.layer-one
@@ -96,7 +97,7 @@ block content
               .s-icon.icon2-fb
 
 
-    section.js-page.screen.screen-2
+    section.js-page.screen.screen-2.map-slider-screen.map-1
       .screen-inner
         h1 Как это работает
         .map
@@ -107,9 +108,69 @@ block content
             ul.schemes
               li.active
                 .lines
+                .markers
+                  .marker(data-value='34')
+                    span.title Кинотеатр
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='56')
+                    span.title Фастфуд
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='68')
+                    span.title Университет
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='89')
+                    span.title Метро
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='48')
+                    span.title Стадион
+                    span.counter-value 0
+                    | /100
               li
-
-              li 3
+                .lines
+                .markers
+                  .marker(data-value='46')
+                    span.title Детсад
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='56')
+                    span.title Ресторан
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='86')
+                    span.title Парк
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='68')
+                    span.title Поликлиника
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='43')
+                    span.title Супермаркет
+                    span.counter-value 0
+                    | /100
+              li
+                .lines
+                .markers
+                  .marker(data-value='56')
+                    span.title Ресторан
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='46')
+                    span.title Остановка
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='86')
+                    span.title Достопримечательность
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='43')
+                    span.title Прокат велосипедов
+                    span.counter-value 0
+                    | /100
           .map-buttons-block
             ul.map-buttons
               li.active Для студента
@@ -124,7 +185,7 @@ block content
         a(href='def.html' class='button button--red button--center') Перейти к поиску
 
 
-    section.js-page.screen.screen-4.map-slider-screen
+    section.js-page.screen.screen-4.map-slider-screen.map-2
       .screen-inner
         h1 Решение для бизнеса
         .map
@@ -134,20 +195,74 @@ block content
               | Место - одно из ключевых «координат» маркетингового планирования. Вы узнаете, на <br> сколько месторасположение объекта коммерческой недвижимости подходит <br> Вашему Бизнесу.
             ul.schemes
               li.active
-                .marker(data-value='88')
-                  span.counter-value 0
-                  | /100
-                .marker(data-value='94')
-                  span.counter-value 0
-                  | /100
-                .marker(data-value='100')
-                  span.counter-value 0
-                  | /100
-                .marker(data-value='67')
-                  span.counter-value 0
-                  | /100
-              li 2
-              li 3
+                .lines
+                .markers
+                  .marker(data-value='75')
+                    span.title Кафе 2
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='68')
+                    span.title Ресторан
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='97')
+                    span.title Парковка
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='86')
+                    span.title Клиентские потоки
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='54')
+                    span.title Кафе 1
+                    span.counter-value 0
+                    | /100
+              li
+                .lines
+                .markers
+                  .marker(data-value='89')
+                    span.title Кафе
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='89')
+                    span.title Ресторан 1
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='96')
+                    span.title Парковка
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='91')
+                    span.title Общ транспорт
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='67')
+                    span.title Фитнес зал
+                    span.counter-value 0
+                    | /100
+              li
+                .lines
+                .markers
+                  .marker(data-value='96')
+                    span.title Стоянка
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='89')
+                    span.title Трафик
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='89')
+                    span.title Ж/Д тупик
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='91')
+                    span.title Безопасность
+                    span.counter-value 0
+                    | /100
+                  .marker(data-value='67')
+                    span.title Подъездные пути
+                    span.counter-value 0
+                    | /100
           .map-buttons-block
             ul.map-buttons
               li.active Кафе
@@ -223,6 +338,7 @@ block content
               a(href='#')
                 .s-icon.icon2-ins
                 | Instagram
+
 
     footer.footer
       .footer-inner

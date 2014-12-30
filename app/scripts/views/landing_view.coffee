@@ -23,7 +23,6 @@ class LandingView extends Marionette.ItemView
     layerThree: '.layer-three'
     layerFour: '.layer-four'
     layerFive: '.layer-five'
-    currentMapSlide: '.schemes > .active'
     marker: '.marker'
 
   events:
@@ -38,6 +37,7 @@ class LandingView extends Marionette.ItemView
     @ui.wind.on 'resize', @onResize
 
   onRender: ->
+    @isActiveCounter = []
     @ui.wind = $(window)
     setTimeout(=>
       @_pageDimensions()
@@ -62,15 +62,18 @@ class LandingView extends Marionette.ItemView
 
   onRefreshCounter: =>
     fromTop = @ui.wind.scrollTop()
-    mapSliderTop = @ui.mapSlider.offset().top
-    mapSliderBottom = mapSliderTop + @ui.mapSlider.height()
 
-    if fromTop < mapSliderTop - @windowHeight or fromTop > mapSliderBottom
-      @isActiveCounter = true
-      @ui.marker.find('.counter-value').html('0')
-    else if fromTop > mapSliderTop or fromTop < mapSliderBottom
-      @setCounters(@isActiveCounter)
-      @isActiveCounter = false
+    _.each @ui.mapSlider, (value, key) =>
+      $mapSlider = $(value)
+      mapSliderTop = $mapSlider.offset().top
+      mapSliderBottom = mapSliderTop + $mapSlider.height()
+
+      if fromTop < mapSliderTop or fromTop > mapSliderBottom
+        @isActiveCounter[key] = true
+        $mapSlider.find('.counter-value').html('0')
+      else if fromTop > mapSliderTop and fromTop < mapSliderBottom
+        @_setCounters($mapSlider.find('.schemes li.active'), @isActiveCounter[key])
+        @isActiveCounter[key] = false
 
   onResize: =>
     @_pageDimensions()
@@ -90,14 +93,15 @@ class LandingView extends Marionette.ItemView
   onClickMapButton: (event) ->
     self = $(event.currentTarget)
     index = self.index()
-    $map = self.closest('.map')
+    $map = self.closest('.map-slider-screen')
+    # key = if $map.hasClass('map-1') then 0 else 1
 
-    @ui.marker.find('.counter-value').html('0')
-    @isActiveCounter = true
-    @ui.mapButton.removeClass('active')
+    $map.find('.counter-value').html('0')
+    # @isActiveCounter[key] = true
+    $map.find('.map-buttons li').removeClass('active')
     self.addClass('active')
     $map.find('.schemes li').removeClass('active').eq(index).addClass('active')
-    @setCounters(@isActiveCounter)
+    @_setCounters($map.find('.schemes li.active'), true)
 
   onMoveHeadBackground: (event) ->
     @_setShift(event, @ui.layerTwo, 0.003, 0)
@@ -106,9 +110,9 @@ class LandingView extends Marionette.ItemView
     @_setShift(event, @ui.layerFive, -0.015, -0.015)
     @_setLinearShift(event, @ui.plane, 0.1)
 
-  setCounters: (isActive) ->
+  _setCounters: ($currentMapSlide, isActive) ->
     if isActive
-      $marker = @ui.currentMapSlide.find('.marker')
+      $marker = $currentMapSlide.find('.marker')
 
       _.each $marker, (value, key) =>
         $self = $(value)

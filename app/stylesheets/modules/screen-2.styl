@@ -21,11 +21,6 @@
 
     .lines
       position: absolute
-      top: 267px
-      left: 513px
-      width: 0
-      height: 0
-      background-color: rgba(#333, 0.3)
 
     .icon-logo-cut
       font-size: 56px
@@ -33,6 +28,7 @@
       position: absolute
       top: 217px
       left: 493px
+      z-index: 10
 
     p
       text-align: center
@@ -46,19 +42,84 @@
 
         &:nth-child(1)
           .lines
-            background-image: url("images/pathes/pathes11.png")
-            background-position: center center
+            top: 168px
+            left: 220px
+            sprite($pathes11)
 
-    &:hover
-      ul.schemes
-        li
-          &:nth-child(1)
-            .lines
-              width: 617px
-              height: 244px
-              top: 168px
-              left: 220px
-              transition: all 3s ease
+          .marker
+            &:nth-child(1)
+              left: 188px
+              top: 94px
+
+            &:nth-child(2)
+              left: 382px
+              top: 126px
+
+            &:nth-child(3)
+              left: 380px
+              top: 306px
+
+            &:nth-child(4)
+              left: 574px
+              top: 153px
+
+            &:nth-child(5)
+              left: 798px
+              top: 316px
+
+        &:nth-child(2)
+          .lines
+            top: 156px
+            left: 258px
+            sprite($pathes12)
+
+          .marker
+            &:nth-child(1)
+              left: 222px
+              top: 256px
+
+            &:nth-child(2)
+              left: 266px
+              top: 90px
+
+            &:nth-child(3)
+              left: 386px
+              top: 116px
+
+            &:nth-child(4)
+              left: 670px
+              top: 122px
+
+            &:nth-child(5)
+              left: 706px
+              top: 246px
+
+        &:nth-child(3)
+          .lines
+            top: 176px
+            left: 301px
+            sprite($pathes13)
+
+          .marker
+            &:nth-child(1)
+              left: 266px
+              top: 90px
+
+            &:nth-child(2)
+              left: 366px
+              top: 210px
+
+            &:nth-child(3)
+              left: 482px
+              top: 88px
+
+            &:nth-child(4)
+              left: 580px
+              top: 292px
+
+          &:nth-child(5)
+            left: 706px
+            top: 246px
 
   .map-buttons-block
     center(660px)
