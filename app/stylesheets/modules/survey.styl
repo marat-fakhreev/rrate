@@ -278,6 +278,20 @@
       &:first-child
         padding: 0
 
+      .category
+        height: 90px
+        padding: 0 75px
+        background-color: #fff
+        overflow: hidden
+
+        span
+          @extend h5
+          font-size: 24px
+          line-height: 90px
+
+        .q-item
+          line-height: 90px
+
       .arrows-block
         position: absolute
         top: 0
@@ -311,21 +325,9 @@
         height: 45px
         background-color: #fff
         overflow: hidden
-        cursor: pointer
 
-        &:nth-child(even)
+        &:nth-child(odd)
           background-color: $lightBgColor
-
-        &:first-child
-          height: 90px
-
-          span
-            @extend h5
-            font-size: 24px
-            line-height: 90px
-
-          .q-item
-            line-height: 90px
 
       span
         float: left
@@ -337,23 +339,25 @@
         line-height: 40px
         text-align: center
         color: rgba($mainGreyColor, 0.5)
+        cursor: pointer
 
-        &:hover
-          color: $mainGreyColor
+        .q-circle
+          &:hover
+            color: $mainGreyColor
 
-        .active
-          color: $mainRedColor
-          position: relative
+          &.active
+            color: $mainRedColor
+            position: relative
 
-          &::after
-            content: ''
-            background-color: #fff
-            width: 8px
-            height: 8px
-            border-radius: 50%
-            position: absolute
-            top: 6px
-            left: 5px
+            &::after
+              content: ''
+              background-color: #fff
+              width: 8px
+              height: 8px
+              border-radius: 50%
+              position: absolute
+              top: 6px
+              left: 5px
 
   .survey-title-2
     height: 380px
@@ -363,22 +367,21 @@
       padding: 90px 0 0 0
 
     .baloons-block
-      height: 340px
+      height: 160px
       width: 100%
       overflow: hidden
       position: absolute
       bottom: 0
+      box-sizing: border-box
 
       .baloon-left
-        position: absolute
-        left: 50px
-        bottom: -140px
+        float: left
+        margin-left: 50px
         sprite($ball-left)
 
       .baloon-right
-        position: absolute
-        right: 50px
-        bottom: -110px
+        float: right
+        margin-right: 50px
         sprite($ball-right)
 
   .client-form

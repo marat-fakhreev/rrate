@@ -2,6 +2,11 @@ extends templates/layout
 
 block content
   body.survey
+    #social
+      h1
+        | Я, всего за 9,6* минут помог 1 000 000 семей <br><br> И ты сможешь внести вклад в развитие российского стартапа.
+      img(src="images/social/SocialSharesQs.png", alt="")
+
     #fb-root
     | <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
 
@@ -23,7 +28,7 @@ block content
             .cloud.clouds-1
             .cloud.clouds-2
             .cloud.clouds-3
-          .rocket-block.move-object
+          div(class="rocket-block move-object", data-height="60")
             .rocket
         .survey-box
           .title-box
@@ -59,16 +64,16 @@ block content
                   .arrows-block
                     .arrow.top-arrow.fa.fa-long-arrow-up
                     .arrow.bottom-arrow.fa.fa-long-arrow-down
+                  div.category
+                    span Eда
+                    .q-items
+                      .q-item
+                        .q-circle.fa.fa-circle
+                      .q-item
+                        .q-circle.fa.fa-circle
+                      .q-item
+                        .q-circle.fa.fa-circle
                   ul
-                    li
-                      span Eда
-                      .q-items
-                        .q-item
-                          .q-circle.fa.fa-circle
-                        .q-item
-                          .q-circle.fa.fa-circle
-                        .q-item
-                          .q-circle.fa.fa-circle
                     li
                       span Рестораны
                       .q-items
@@ -110,16 +115,16 @@ block content
                   .arrows-block
                     .arrow.top-arrow.fa.fa-long-arrow-up
                     .arrow.bottom-arrow.fa.fa-long-arrow-down
+                  div.category
+                    span Для общения
+                    .q-items
+                      .q-item
+                        .q-circle.fa.fa-circle
+                      .q-item
+                        .q-circle.fa.fa-circle
+                      .q-item
+                        .q-circle.fa.fa-circle
                   ul
-                    li
-                      span Для общения
-                      .q-items
-                        .q-item
-                          .q-circle.fa.fa-circle
-                        .q-item
-                          .q-circle.fa.fa-circle
-                        .q-item
-                          .q-circle.fa.fa-circle
                     li
                       span Кафе кондитерские / кофейни
                       .q-items
@@ -161,16 +166,16 @@ block content
                   .arrows-block
                     .arrow.top-arrow.fa.fa-long-arrow-up
                     .arrow.bottom-arrow.fa.fa-long-arrow-down
+                  div.category
+                    span Eда
+                    .q-items
+                      .q-item
+                        .q-circle.fa.fa-circle
+                      .q-item
+                        .q-circle.fa.fa-circle
+                      .q-item
+                        .q-circle.fa.fa-circle
                   ul
-                    li
-                      span Eда
-                      .q-items
-                        .q-item
-                          .q-circle.fa.fa-circle
-                        .q-item
-                          .q-circle.fa.fa-circle
-                        .q-item
-                          .q-circle.fa.fa-circle
                     li
                       span Рестораны
                       .q-items
@@ -212,16 +217,16 @@ block content
                   .arrows-block
                     .arrow.top-arrow.fa.fa-long-arrow-up
                     .arrow.bottom-arrow.fa.fa-long-arrow-down
+                  div.category
+                    span Eда
+                    .q-items
+                      .q-item
+                        .q-circle.fa.fa-circle
+                      .q-item
+                        .q-circle.fa.fa-circle
+                      .q-item
+                        .q-circle.fa.fa-circle
                   ul
-                    li
-                      span Eда
-                      .q-items
-                        .q-item
-                          .q-circle.fa.fa-circle
-                        .q-item
-                          .q-circle.fa.fa-circle
-                        .q-item
-                          .q-circle.fa.fa-circle
                     li
                       span Рестораны
                       .q-items
@@ -267,7 +272,7 @@ block content
             .cloud.clouds-1
             .cloud.clouds-2
             .cloud.clouds-3
-          .baloons-block.move-object
+          div(class="baloons-block move-object", data-height="160")
             .baloon-left
             .baloon-right
         .survey-box
@@ -330,7 +335,7 @@ block content
             .cloud.clouds-1
             .cloud.clouds-2
             .cloud.clouds-3
-          .family-block.move-object
+          .family-block
             .family
         .survey-box.footer-box
           h5.text--center
@@ -341,7 +346,12 @@ block content
               .like
                 div(class="fb-like", data-href="https://developers.facebook.com/docs/plugins/", data-layout="button_count", data-action="like", data-show-faces="true", data-share="false")
               .like
-                | <div id="vk_like"></div>
-                | <script type="text/javascript">VK.Widgets.Like('vk_like');</script>
+                #vk_like
+                script(type="text/javascript").
+                  description = "Я, всего за 9,6* минут помог 1 000 000 семей \n\n И ты сможешь внести вклад в развитие российского стартапа."
+                  VK.Widgets.Like('vk_like', {
+                    pageDescription: description,
+                    pageImage: "images/social/SocialSharesQs.png"
+                  })
           h5.text--center
             | Мы, в нашей компании верим в то, что люди в большинстве своем хорошие и склонны приносить пользу друг другу.

@@ -2,6 +2,11 @@ extends templates/layout
 
 block content
   body.promo
+    #social
+      h1
+        | Я отношусь к 1,35% людей «внимательных к деталям»! <br><br> И ты проверь свои возможности и найди фишку на сайте!
+      img(src="images/social/SocialSharesPromo.png", alt="")
+
     #fb-root
     | <script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
 
@@ -52,5 +57,10 @@ block content
               .like
                 div(class="fb-like", data-href="https://developers.facebook.com/docs/plugins/", data-layout="button_count", data-action="like", data-show-faces="true", data-share="false")
               .like
-                | <div id="vk_like"></div>
-                | <script type="text/javascript">VK.Widgets.Like('vk_like');</script>
+                #vk_like
+                script(type="text/javascript").
+                  description = "Я отношусь к 1,35% людей «внимательных к деталям»! \n\n И ты проверь свои возможности и найди фишку на сайте!"
+                  VK.Widgets.Like('vk_like', {
+                    pageDescription: description,
+                    pageImage: "images/social/SocialSharesPromo.png"
+                  })

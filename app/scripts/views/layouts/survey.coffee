@@ -17,11 +17,12 @@ class SurveyLayout extends Marionette.LayoutView
     'surveyList': '.survey-list'
     'surveyCircles': '.survey-circles'
     'surveyCircle': '.survey-circles .circle'
+    'moveObject': '.move-object'
 
   events:
     'click @ui.formListButton': 'onChooseItem'
     'click @ui.checker': 'onClickChecker'
-    'click @ui.checkbox': 'onClickCircle'
+    'click @ui.checkbox': 'onClickQuestionCircle'
     'click @ui.mapButton': 'onClickMapButton'
     'click @ui.arrowButton': 'onClickArrowButton'
     'click @ui.surveyCircle': 'onClickSurveyCircle'
@@ -29,7 +30,7 @@ class SurveyLayout extends Marionette.LayoutView
 
   onRender: ->
     @wind = $(window)
-    @wind.on 'scroll', @onScrollPages
+    @wind.on 'scroll', @onScrollScreen
     @_initSurveyCircles()
 
   onChooseItem: (event) ->
@@ -41,11 +42,20 @@ class SurveyLayout extends Marionette.LayoutView
     self = $(event.currentTarget)
     self.toggleClass('active')
 
-  onClickCircle: (event) ->
+  onClickQuestionCircle: (event) ->
     self = $(event.currentTarget)
     $itemsList = self.closest('.q-items')
     $itemsList.find('.q-circle').removeClass('active')
     self.addClass('active')
+
+    if self.closest('.category').length isnt 0
+      index = self.closest('.q-item').index()
+      $list = self.closest('.question').find('ul')
+      $list.find('.q-circle').removeClass('active')
+
+      _.each $list.find('.q-item'), (value, key) ->
+        $self = $(value)
+        $self.find('.q-circle').addClass('active') if index is $self.index()
 
   onClickMapButton: (event) ->
     self = $(event.currentTarget)
@@ -102,9 +112,8 @@ class SurveyLayout extends Marionette.LayoutView
     @_setShift(event, $cloud.eq(0), 0.03, 0.015)
     @_setShift(event, $cloud.eq(1), 0.01, 0.03)
     @_setShift(event, $cloud.eq(2), -0.015, 0.015)
-    @_setLinearShift(event, $object, 0.01, 0.01, $object.height())
 
-  onScrollPages: =>
+  onScrollScreen: =>
     fromTop = @wind.scrollTop()
 
     if fromTop > @ui.surveyList.offset().top - 100
@@ -112,13 +121,13 @@ class SurveyLayout extends Marionette.LayoutView
     else
       @ui.surveyCircles.removeClass('fixed')
 
+    _.each @ui.moveObject, (value, key) ->
+      $self = $(value)
+      offsetValue = fromTop - $self.closest('.survey-title').offset().top + 80
+      $self.css('height', $self.data('height') + offsetValue * 0.57) if offsetValue >= 0
+
   _setShift: (event, $selector, xCoef, yCoef) ->
     $selector.css('background-position', "#{xCoef * event.pageX}px #{yCoef * event.pageY}px")
-
-  _setLinearShift: (event, $selector, xCoef, yCoef, height) ->
-    $selector.css({
-      left: "#{xCoef * event.pageX}px"
-    })
 
   _initSurveyCircles: ->
     count = @ui.question.length
