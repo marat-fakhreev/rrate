@@ -19,6 +19,14 @@
     background-repeat: no-repeat
     position: relative
 
+    .lines
+      position: absolute
+      top: 267px
+      left: 513px
+      width: 0
+      height: 0
+      background-color: rgba(#333, 0.3)
+
     .icon-logo-cut
       font-size: 56px
       color: $mainRedColor
@@ -35,6 +43,22 @@
 
         &.active
           display: block
+
+        &:nth-child(1)
+          .lines
+            background-image: url("images/pathes/pathes11.png")
+            background-position: center center
+
+    &:hover
+      ul.schemes
+        li
+          &:nth-child(1)
+            .lines
+              width: 617px
+              height: 244px
+              top: 168px
+              left: 220px
+              transition: all 3s ease
 
   .map-buttons-block
     center(660px)
